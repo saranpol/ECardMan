@@ -7,10 +7,42 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewHowToPlay.h"
+#import "ViewChooseYourself.h"
+#import "ViewBeforeAfter.h"
+#import "ViewSelectTheme.h"
+#import "ViewPersonalize.h"
+#import "ViewEmailFriend.h"
+#import "ViewSend.h"
+#import "ViewThankYou.h"
 
-@interface ECardManViewController : UIViewController {
+@interface ECardManViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+@public
+	ViewHowToPlay *mViewHowToPlay;
+	ViewChooseYourself *mViewChooseYourself;
+	ViewBeforeAfter	*mViewBeforeAfter;
+	ViewSelectTheme *mViewSelectTheme;
+	ViewPersonalize *mViewPersonalize;
+	ViewEmailFriend *mViewEmailFriend;
+	ViewSend *mViewSend;
+	ViewThankYou *mViewThankYou;
+	
+	UIImagePickerController *mImagePicker;
+	UIPopoverController *mPopoverController;
 
 }
+
+-(void)gotoViewChooseYourself;
+-(void)gotoViewCamera;
+-(void)gotoViewBeforeAfter;
+-(void)gotoViewSelectTheme;
+-(void)gotoViewPersonalize;
+-(void)gotoViewEmailFriend;
+-(void)gotoViewSend;
+-(void)gotoViewThankYou;
+
+
+-(IBAction)clickStartNow:(id)sender;
 
 @end
 

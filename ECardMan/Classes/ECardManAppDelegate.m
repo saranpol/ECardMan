@@ -14,6 +14,11 @@
 @synthesize window;
 @synthesize viewController;
 
++ (ECardManAppDelegate *)core {
+    return (ECardManAppDelegate *) [UIApplication sharedApplication].delegate;
+}
+
+
 
 #pragma mark -
 #pragma mark Application lifecycle

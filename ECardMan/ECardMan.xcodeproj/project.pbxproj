@@ -15,6 +15,22 @@
 		2899E5220DE3E06400AC0155 /* ECardManViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* ECardManViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* ECardManViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* ECardManViewController.m */; };
+		43C6007114421EFF001E16D7 /* ViewHowToPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C6006F14421EFF001E16D7 /* ViewHowToPlay.m */; };
+		43C6007214421EFF001E16D7 /* ViewHowToPlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C6007014421EFF001E16D7 /* ViewHowToPlay.xib */; };
+		43C6008A14423459001E16D7 /* ViewChooseYourself.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C6008814423459001E16D7 /* ViewChooseYourself.m */; };
+		43C6008B14423459001E16D7 /* ViewChooseYourself.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C6008914423459001E16D7 /* ViewChooseYourself.xib */; };
+		43C600DA14423ECF001E16D7 /* ViewBeforeAfter.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C600D814423ECF001E16D7 /* ViewBeforeAfter.m */; };
+		43C600DB14423ECF001E16D7 /* ViewBeforeAfter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C600D914423ECF001E16D7 /* ViewBeforeAfter.xib */; };
+		43C600ED144242DE001E16D7 /* ViewSelectTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C600EB144242DE001E16D7 /* ViewSelectTheme.m */; };
+		43C600EE144242DE001E16D7 /* ViewSelectTheme.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C600EC144242DE001E16D7 /* ViewSelectTheme.xib */; };
+		43C600FD14424A27001E16D7 /* ViewPersonalize.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C600FB14424A27001E16D7 /* ViewPersonalize.m */; };
+		43C600FE14424A27001E16D7 /* ViewPersonalize.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C600FC14424A27001E16D7 /* ViewPersonalize.xib */; };
+		43C6010314424A5E001E16D7 /* ViewEmailFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C6010114424A5E001E16D7 /* ViewEmailFriend.m */; };
+		43C6010414424A5E001E16D7 /* ViewEmailFriend.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C6010214424A5E001E16D7 /* ViewEmailFriend.xib */; };
+		43C6010914424A93001E16D7 /* ViewSend.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C6010714424A93001E16D7 /* ViewSend.m */; };
+		43C6010A14424A93001E16D7 /* ViewSend.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C6010814424A93001E16D7 /* ViewSend.xib */; };
+		43C6010F14424AD6001E16D7 /* ViewThankYou.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C6010D14424AD6001E16D7 /* ViewThankYou.m */; };
+		43C6011014424AD6001E16D7 /* ViewThankYou.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C6010E14424AD6001E16D7 /* ViewThankYou.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +46,30 @@
 		28D7ACF70DDB3853001CB0EB /* ECardManViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECardManViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ECardMan_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECardMan_Prefix.pch; sourceTree = "<group>"; };
+		43C6006E14421EFF001E16D7 /* ViewHowToPlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewHowToPlay.h; sourceTree = "<group>"; };
+		43C6006F14421EFF001E16D7 /* ViewHowToPlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewHowToPlay.m; sourceTree = "<group>"; };
+		43C6007014421EFF001E16D7 /* ViewHowToPlay.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewHowToPlay.xib; sourceTree = "<group>"; };
+		43C6008714423459001E16D7 /* ViewChooseYourself.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewChooseYourself.h; sourceTree = "<group>"; };
+		43C6008814423459001E16D7 /* ViewChooseYourself.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewChooseYourself.m; sourceTree = "<group>"; };
+		43C6008914423459001E16D7 /* ViewChooseYourself.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewChooseYourself.xib; sourceTree = "<group>"; };
+		43C600D714423ECF001E16D7 /* ViewBeforeAfter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewBeforeAfter.h; sourceTree = "<group>"; };
+		43C600D814423ECF001E16D7 /* ViewBeforeAfter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewBeforeAfter.m; sourceTree = "<group>"; };
+		43C600D914423ECF001E16D7 /* ViewBeforeAfter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewBeforeAfter.xib; sourceTree = "<group>"; };
+		43C600EA144242DE001E16D7 /* ViewSelectTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewSelectTheme.h; sourceTree = "<group>"; };
+		43C600EB144242DE001E16D7 /* ViewSelectTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewSelectTheme.m; sourceTree = "<group>"; };
+		43C600EC144242DE001E16D7 /* ViewSelectTheme.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewSelectTheme.xib; sourceTree = "<group>"; };
+		43C600FA14424A27001E16D7 /* ViewPersonalize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPersonalize.h; sourceTree = "<group>"; };
+		43C600FB14424A27001E16D7 /* ViewPersonalize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPersonalize.m; sourceTree = "<group>"; };
+		43C600FC14424A27001E16D7 /* ViewPersonalize.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewPersonalize.xib; sourceTree = "<group>"; };
+		43C6010014424A5E001E16D7 /* ViewEmailFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewEmailFriend.h; sourceTree = "<group>"; };
+		43C6010114424A5E001E16D7 /* ViewEmailFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewEmailFriend.m; sourceTree = "<group>"; };
+		43C6010214424A5E001E16D7 /* ViewEmailFriend.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewEmailFriend.xib; sourceTree = "<group>"; };
+		43C6010614424A93001E16D7 /* ViewSend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewSend.h; sourceTree = "<group>"; };
+		43C6010714424A93001E16D7 /* ViewSend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewSend.m; sourceTree = "<group>"; };
+		43C6010814424A93001E16D7 /* ViewSend.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewSend.xib; sourceTree = "<group>"; };
+		43C6010C14424AD6001E16D7 /* ViewThankYou.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewThankYou.h; sourceTree = "<group>"; };
+		43C6010D14424AD6001E16D7 /* ViewThankYou.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewThankYou.m; sourceTree = "<group>"; };
+		43C6010E14424AD6001E16D7 /* ViewThankYou.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewThankYou.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ECardMan-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ECardMan-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,6 +94,30 @@
 				1D3623250D0F684500981E51 /* ECardManAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* ECardManViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* ECardManViewController.m */,
+				43C6006E14421EFF001E16D7 /* ViewHowToPlay.h */,
+				43C6006F14421EFF001E16D7 /* ViewHowToPlay.m */,
+				43C6007014421EFF001E16D7 /* ViewHowToPlay.xib */,
+				43C6008714423459001E16D7 /* ViewChooseYourself.h */,
+				43C6008814423459001E16D7 /* ViewChooseYourself.m */,
+				43C6008914423459001E16D7 /* ViewChooseYourself.xib */,
+				43C600D714423ECF001E16D7 /* ViewBeforeAfter.h */,
+				43C600D814423ECF001E16D7 /* ViewBeforeAfter.m */,
+				43C600D914423ECF001E16D7 /* ViewBeforeAfter.xib */,
+				43C600EA144242DE001E16D7 /* ViewSelectTheme.h */,
+				43C600EB144242DE001E16D7 /* ViewSelectTheme.m */,
+				43C600EC144242DE001E16D7 /* ViewSelectTheme.xib */,
+				43C600FA14424A27001E16D7 /* ViewPersonalize.h */,
+				43C600FB14424A27001E16D7 /* ViewPersonalize.m */,
+				43C600FC14424A27001E16D7 /* ViewPersonalize.xib */,
+				43C6010014424A5E001E16D7 /* ViewEmailFriend.h */,
+				43C6010114424A5E001E16D7 /* ViewEmailFriend.m */,
+				43C6010214424A5E001E16D7 /* ViewEmailFriend.xib */,
+				43C6010614424A93001E16D7 /* ViewSend.h */,
+				43C6010714424A93001E16D7 /* ViewSend.m */,
+				43C6010814424A93001E16D7 /* ViewSend.xib */,
+				43C6010C14424AD6001E16D7 /* ViewThankYou.h */,
+				43C6010D14424AD6001E16D7 /* ViewThankYou.m */,
+				43C6010E14424AD6001E16D7 /* ViewThankYou.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -158,6 +222,14 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				2899E5220DE3E06400AC0155 /* ECardManViewController.xib in Resources */,
+				43C6007214421EFF001E16D7 /* ViewHowToPlay.xib in Resources */,
+				43C6008B14423459001E16D7 /* ViewChooseYourself.xib in Resources */,
+				43C600DB14423ECF001E16D7 /* ViewBeforeAfter.xib in Resources */,
+				43C600EE144242DE001E16D7 /* ViewSelectTheme.xib in Resources */,
+				43C600FE14424A27001E16D7 /* ViewPersonalize.xib in Resources */,
+				43C6010414424A5E001E16D7 /* ViewEmailFriend.xib in Resources */,
+				43C6010A14424A93001E16D7 /* ViewSend.xib in Resources */,
+				43C6011014424AD6001E16D7 /* ViewThankYou.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +243,14 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* ECardManAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* ECardManViewController.m in Sources */,
+				43C6007114421EFF001E16D7 /* ViewHowToPlay.m in Sources */,
+				43C6008A14423459001E16D7 /* ViewChooseYourself.m in Sources */,
+				43C600DA14423ECF001E16D7 /* ViewBeforeAfter.m in Sources */,
+				43C600ED144242DE001E16D7 /* ViewSelectTheme.m in Sources */,
+				43C600FD14424A27001E16D7 /* ViewPersonalize.m in Sources */,
+				43C6010314424A5E001E16D7 /* ViewEmailFriend.m in Sources */,
+				43C6010914424A93001E16D7 /* ViewSend.m in Sources */,
+				43C6010F14424AD6001E16D7 /* ViewThankYou.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

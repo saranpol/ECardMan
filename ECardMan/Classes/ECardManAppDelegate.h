@@ -11,9 +11,12 @@
 @class ECardManViewController;
 
 @interface ECardManAppDelegate : NSObject <UIApplicationDelegate> {
+@public
     UIWindow *window;
     ECardManViewController *viewController;
 }
+
++ (ECardManAppDelegate *)core;
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet ECardManViewController *viewController;
