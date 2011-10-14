@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-
 @interface ViewSelectTheme : UIViewController {
-
+@public
+	IBOutlet UIScrollView *mScrollView;
+    NSMutableArray *mViewThemeArray;
 }
 
+@property (nonatomic, retain) IBOutlet UIScrollView *mScrollView;
+
 - (IBAction)clickNext:(id)sender;
+
 
 @end

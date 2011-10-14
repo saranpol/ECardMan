@@ -31,6 +31,8 @@
 		43C6010A14424A93001E16D7 /* ViewSend.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C6010814424A93001E16D7 /* ViewSend.xib */; };
 		43C6010F14424AD6001E16D7 /* ViewThankYou.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C6010D14424AD6001E16D7 /* ViewThankYou.m */; };
 		43C6011014424AD6001E16D7 /* ViewThankYou.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C6010E14424AD6001E16D7 /* ViewThankYou.xib */; };
+		521145911448DB8B005548B7 /* ViewTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 5211458F1448DB8B005548B7 /* ViewTheme.m */; };
+		521145921448DB8B005548B7 /* ViewTheme.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521145901448DB8B005548B7 /* ViewTheme.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,9 @@
 		43C6010C14424AD6001E16D7 /* ViewThankYou.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewThankYou.h; sourceTree = "<group>"; };
 		43C6010D14424AD6001E16D7 /* ViewThankYou.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewThankYou.m; sourceTree = "<group>"; };
 		43C6010E14424AD6001E16D7 /* ViewThankYou.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewThankYou.xib; sourceTree = "<group>"; };
+		5211458E1448DB8B005548B7 /* ViewTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewTheme.h; sourceTree = "<group>"; };
+		5211458F1448DB8B005548B7 /* ViewTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewTheme.m; sourceTree = "<group>"; };
+		521145901448DB8B005548B7 /* ViewTheme.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewTheme.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ECardMan-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ECardMan-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +111,9 @@
 				43C600EA144242DE001E16D7 /* ViewSelectTheme.h */,
 				43C600EB144242DE001E16D7 /* ViewSelectTheme.m */,
 				43C600EC144242DE001E16D7 /* ViewSelectTheme.xib */,
+				5211458E1448DB8B005548B7 /* ViewTheme.h */,
+				5211458F1448DB8B005548B7 /* ViewTheme.m */,
+				521145901448DB8B005548B7 /* ViewTheme.xib */,
 				43C600FA14424A27001E16D7 /* ViewPersonalize.h */,
 				43C600FB14424A27001E16D7 /* ViewPersonalize.m */,
 				43C600FC14424A27001E16D7 /* ViewPersonalize.xib */,
@@ -230,6 +238,7 @@
 				43C6010414424A5E001E16D7 /* ViewEmailFriend.xib in Resources */,
 				43C6010A14424A93001E16D7 /* ViewSend.xib in Resources */,
 				43C6011014424AD6001E16D7 /* ViewThankYou.xib in Resources */,
+				521145921448DB8B005548B7 /* ViewTheme.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +260,7 @@
 				43C6010314424A5E001E16D7 /* ViewEmailFriend.m in Sources */,
 				43C6010914424A93001E16D7 /* ViewSend.m in Sources */,
 				43C6010F14424AD6001E16D7 /* ViewThankYou.m in Sources */,
+				521145911448DB8B005548B7 /* ViewTheme.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +277,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ECardMan_Prefix.pch;
 				INFOPLIST_FILE = "ECardMan-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = ECardMan;
 			};
 			name = Debug;
@@ -279,6 +290,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ECardMan_Prefix.pch;
 				INFOPLIST_FILE = "ECardMan-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = ECardMan;
 				VALIDATE_PRODUCT = YES;
 			};
