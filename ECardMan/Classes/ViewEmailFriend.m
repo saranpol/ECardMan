@@ -11,6 +11,7 @@
 #import "ECardManViewController.h"
 
 @implementation ViewEmailFriend
+@synthesize mImage;
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
@@ -23,12 +24,11 @@
 }
 */
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [mImage setImage:[ECardManAppDelegate core]->viewController->mEcardImage];
 }
-*/
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -53,12 +53,16 @@
 
 
 - (void)dealloc {
+    [mImage release];
     [super dealloc];
 }
 
 - (IBAction)clickNext:(id)sender {
 	[self.view removeFromSuperview];
 	[[ECardManAppDelegate core]->viewController gotoViewSend];
+    
+    [[ECardManAppDelegate core]->viewController->mViewEmailFriend release];
+    [ECardManAppDelegate core]->viewController->mViewEmailFriend = nil;
 }
 
 

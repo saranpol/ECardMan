@@ -81,6 +81,9 @@
 		[mViewSend release];
 	if(mViewThankYou)
 		[mViewThankYou release];
+    
+    if(mEcardImage)
+        [mEcardImage release];
 	
     [super dealloc];
 }

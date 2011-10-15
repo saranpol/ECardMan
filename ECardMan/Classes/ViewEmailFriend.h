@@ -10,8 +10,11 @@
 
 
 @interface ViewEmailFriend : UIViewController {
-
+@public
+	IBOutlet UIImageView *mImage;
 }
+
+@property (nonatomic, retain) IBOutlet UIImageView *mImage;
 
 - (IBAction)clickNext:(id)sender;
 

@@ -29,6 +29,8 @@
 	
 	UIImagePickerController *mImagePicker;
 	UIPopoverController *mPopoverController;
+    
+    UIImage *mEcardImage;
 
 }
 
