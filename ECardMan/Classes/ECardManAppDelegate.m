@@ -14,6 +14,12 @@
 @synthesize window;
 @synthesize viewController;
 
+// File Manager
+@synthesize dataPath;
+@synthesize filePath;
+
+
+
 + (ECardManAppDelegate *)core {
     return (ECardManAppDelegate *) [UIApplication sharedApplication].delegate;
 }
@@ -71,6 +77,184 @@
     [window release];
     [super dealloc];
 }
+
+
+
+
+
+
+
+
+// ################
+// File Management
+// ################
+
+#pragma mark -
+#pragma mark File Management
+
+
+void AlertWithError(NSError *error)
+{
+    printf("Error! %s %s", [[error localizedDescription] UTF8String], [[error localizedFailureReason] UTF8String]);
+	
+}
+
+/*
+ - (void) saveFile:(NSString *)fileName data:(char *)buf size:(NSInteger)size{
+ 
+ //NSData *tmpData = [NSData dataWithBytesNoCopy:(void *)buf length:size];
+ NSData *tmpData = [NSData dataWithBytes:(void *)buf length:size];
+ 
+ [filePath release]; //release previous instance
+ filePath = [[dataPath stringByAppendingPathComponent:fileName] retain];
+ 
+ //if ([[NSFileManager defaultManager] fileExistsAtPath:filePath] == NO)
+ 
+ printf("write %s\n", [filePath UTF8String]);
+ [[NSFileManager defaultManager] createFileAtPath:filePath
+ contents:tmpData
+ attributes:nil];
+ }
+ */
+- (void)saveFile:(NSString *)fileName data:(NSData *)tmpData{
+	
+	[filePath release]; //release previous instance
+	filePath = [[dataPath stringByAppendingPathComponent:fileName] retain];
+	
+	printf("write %s\n", [filePath UTF8String]);
+	[[NSFileManager defaultManager] createFileAtPath:filePath
+											contents:tmpData
+										  attributes:nil];
+}
+
+
+- (void) deleteFile:(NSString *)fileName{
+	NSString *fName = [dataPath stringByAppendingPathComponent:fileName];
+	if ([[NSFileManager defaultManager] fileExistsAtPath:fName]) {
+		if (![[NSFileManager defaultManager] removeItemAtPath:fName error:&mError])
+			AlertWithError(mError);
+	}
+}
+
+- (void) deleteFileFormat:(NSString *)formatName{
+	//NSArray *dirContents = [[NSFileManager defaultManager] directoryContentsAtPath:dataPath];
+	NSArray *dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:dataPath error:&mError];
+	for (NSString *file in dirContents) {
+		if ([[file pathExtension] isEqualToString:formatName]) {
+			[self deleteFile:file];
+		}
+	}
+}
+
+- (int) countFileFormat:(NSString *)formatName{
+	//NSArray *dirContents = [[NSFileManager defaultManager] directoryContentsAtPath:dataPath];
+	NSArray *dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:dataPath error:&mError];
+	int count = 0;
+	for (NSString *file in dirContents) {
+		if ([[file pathExtension] isEqualToString:formatName]) {
+			count++;
+		}
+	}
+	return count;
+}
+
+- (void) setupDirectory
+{
+	/* create path to cache directory inside the application's Documents
+	 directory */
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	self.dataPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"cache"];
+	printf("dataPath = %s\n", [self.dataPath UTF8String]);
+	
+	/* check for existence of cache directory */
+	if ([[NSFileManager defaultManager] fileExistsAtPath:dataPath]) {
+		return;
+	}
+	
+	/* create a new cache directory */
+	if (![[NSFileManager defaultManager] createDirectoryAtPath:dataPath
+								   withIntermediateDirectories:NO
+													attributes:nil
+														 error:&mError]) {
+		AlertWithError(mError);
+		return;
+	}
+}
+
+/* removes every file in the directory */
+
+- (void) clearDirectory
+{
+	/* remove the cache directory and its contents */
+	if (![[NSFileManager defaultManager] removeItemAtPath:dataPath error:&mError]) {
+		AlertWithError(mError);
+		return;
+	}
+	
+	/* create a new cache directory */
+	if (![[NSFileManager defaultManager] createDirectoryAtPath:dataPath
+								   withIntermediateDirectories:NO
+													attributes:nil
+														 error:&mError]) {
+		AlertWithError(mError);
+		return;
+	}
+	
+}
+
+//#define TIME_CACHE 86400.0 // one day
+#define TIME_CACHE 10.0
+
+- (BOOL)is_old_file:(NSString *)fName
+{
+	NSDictionary* properties = [[NSFileManager defaultManager]
+								attributesOfItemAtPath:fName
+								error:&mError];
+	if(!properties)
+		return YES;
+	
+	NSDate* modDate = [properties objectForKey:NSFileModificationDate];
+	
+	//printf("\n\n\nxxxxx %s\n", [[modDate description] UTF8String]);
+	//printf("file time %f \n", [modDate timeIntervalSinceNow]);
+	
+	if(fabs([modDate timeIntervalSinceNow]) > TIME_CACHE)
+		return YES;
+	else
+		return NO;
+}
+
+//#define KFileCardNearMeList @"list.nml"
+- (void)ClearCache
+{
+	NSArray *dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:dataPath error:&mError];
+	for (NSString *file in dirContents) {
+		//if([self is_old_file:file]){
+        [self deleteFile:file];
+        printf("will delete file cache = %s\n", [file UTF8String]);
+		//}
+	}
+}
+
+
+- (BOOL)isFileExist:(NSString *)fName
+{
+	fName = [dataPath stringByAppendingPathComponent:fName];
+	return [[NSFileManager defaultManager] fileExistsAtPath:fName];
+}
+
+
+
+- (NSData*)contentOfFile:(NSString *)fName
+{
+	fName = [dataPath stringByAppendingPathComponent:fName];
+	return [NSData dataWithContentsOfFile:fName];
+}
+
+
+
+
+
 
 
 @end

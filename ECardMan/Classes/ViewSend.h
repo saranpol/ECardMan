@@ -18,5 +18,6 @@
 
 - (IBAction)clickSend:(id)sender;
 - (IBAction)clickBack:(id)sender;
+- (void)receivedJson:(NSDictionary*)data;
 
 @end
