@@ -105,6 +105,12 @@
     [ECardManAppDelegate core]->viewController->mViewSelectTheme = nil;
 }
 
+- (IBAction)clickBack:(id)sender {
+	[self.view removeFromSuperview];
+    [[ECardManAppDelegate core]->viewController gotoViewBeforeAfter];
 
+    [[ECardManAppDelegate core]->viewController->mViewSelectTheme release];
+    [ECardManAppDelegate core]->viewController->mViewSelectTheme = nil;
+}
 
 @end

@@ -17,6 +17,6 @@
 @property (nonatomic, retain) IBOutlet UIScrollView *mScrollView;
 
 - (IBAction)clickNext:(id)sender;
-
+- (IBAction)clickBack:(id)sender;
 
 @end

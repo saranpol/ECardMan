@@ -68,4 +68,10 @@
 	[[ECardManAppDelegate core]->viewController gotoViewSelectTheme];
 }
 
+- (IBAction)clickBack:(id)sender {
+	[self.view removeFromSuperview];
+    [[ECardManAppDelegate core]->viewController gotoViewChooseYourself];
+}
+
+
 @end

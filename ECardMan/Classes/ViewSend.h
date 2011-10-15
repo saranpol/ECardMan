@@ -10,9 +10,13 @@
 
 
 @interface ViewSend : UIViewController {
-
+@public
+	IBOutlet UIImageView *mImage;
 }
 
+@property (nonatomic, retain) IBOutlet UIImageView *mImage;
+
 - (IBAction)clickSend:(id)sender;
+- (IBAction)clickBack:(id)sender;
 
 @end

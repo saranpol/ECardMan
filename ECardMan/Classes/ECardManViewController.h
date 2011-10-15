@@ -15,6 +15,7 @@
 #import "ViewEmailFriend.h"
 #import "ViewSend.h"
 #import "ViewThankYou.h"
+#import "ViewSetting.h"
 
 @interface ECardManViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
 @public
@@ -26,14 +27,15 @@
 	ViewEmailFriend *mViewEmailFriend;
 	ViewSend *mViewSend;
 	ViewThankYou *mViewThankYou;
-	
+	ViewSetting *mViewSetting;
+    
 	UIImagePickerController *mImagePicker;
 	UIPopoverController *mPopoverController;
     
     UIImage *mEcardImage;
 
 }
-
+-(void)gotoViewHowToPlay;
 -(void)gotoViewChooseYourself;
 -(void)gotoViewCamera;
 -(void)gotoViewBeforeAfter;
@@ -42,9 +44,10 @@
 -(void)gotoViewEmailFriend;
 -(void)gotoViewSend;
 -(void)gotoViewThankYou;
+-(void)gotoViewSetting;
 
 
 -(IBAction)clickStartNow:(id)sender;
-
+-(IBAction)clickSetting:(id)sender;
 @end
 

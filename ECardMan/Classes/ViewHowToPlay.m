@@ -61,5 +61,9 @@
 	[[ECardManAppDelegate core]->viewController gotoViewChooseYourself];
 }
 
+-(IBAction)clickBack:(id)sender {
+	[self.view removeFromSuperview];
+}
+
 
 @end

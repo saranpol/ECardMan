@@ -235,11 +235,18 @@
 	[self.view addSubview:mViewThankYou.view];
 }
 
+-(void)gotoViewSetting {
+	if(!mViewSetting)
+		mViewSetting = [[ViewSetting alloc] initWithNibName:@"ViewSetting" bundle:nil];
+	[self.view addSubview:mViewSetting.view];
+}
 
 
 -(IBAction)clickStartNow:(id)sender{
 	[self gotoViewHowToPlay];
 }
-
+-(IBAction)clickSetting:(id)sender{
+    [self gotoViewSetting];
+}
 
 @end

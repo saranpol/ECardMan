@@ -19,5 +19,6 @@
 @property (nonatomic, retain) IBOutlet UIImageView *mAfterImage;
 
 - (IBAction)clickNext:(id)sender;
+- (IBAction)clickBack:(id)sender;
 
 @end

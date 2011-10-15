@@ -12,6 +12,8 @@
 
 @implementation ViewSend
 
+@synthesize mImage;
+
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -23,12 +25,10 @@
 }
 */
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [mImage setImage:[ECardManAppDelegate core]->viewController->mEcardImage];
 }
-*/
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -53,13 +53,24 @@
 
 
 - (void)dealloc {
+    [mImage release];
     [super dealloc];
 }
 
 - (IBAction)clickSend:(id)sender {
 	[self.view removeFromSuperview];
 	[[ECardManAppDelegate core]->viewController gotoViewThankYou];
+    
+    [[ECardManAppDelegate core]->viewController->mViewSend release];
+    [ECardManAppDelegate core]->viewController->mViewSend = nil;
 }
 
+- (IBAction)clickBack:(id)sender {
+	[self.view removeFromSuperview];
+    [[ECardManAppDelegate core]->viewController gotoViewEmailFriend];
+    
+    [[ECardManAppDelegate core]->viewController->mViewSend release];
+    [ECardManAppDelegate core]->viewController->mViewSend = nil;
+}
 
 @end

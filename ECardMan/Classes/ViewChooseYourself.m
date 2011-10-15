@@ -61,5 +61,11 @@
 	[[ECardManAppDelegate core]->viewController gotoViewCamera];
 }
 
+-(IBAction)clickBack:(id)sender {
+	[self.view removeFromSuperview];
+    [[ECardManAppDelegate core]->viewController gotoViewHowToPlay];
+}
+
+
 
 @end

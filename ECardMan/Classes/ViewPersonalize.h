@@ -23,5 +23,6 @@
 @property (nonatomic, retain) IBOutlet UIView *mView;
 
 - (IBAction)clickNext:(id)sender;
+- (IBAction)clickBack:(id)sender;
 
 @end

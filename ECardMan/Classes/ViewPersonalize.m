@@ -113,6 +113,14 @@
     [ECardManAppDelegate core]->viewController->mViewPersonalize = nil;
 }
 
+- (IBAction)clickBack:(id)sender {
+	[self.view removeFromSuperview];
+    [[ECardManAppDelegate core]->viewController gotoViewSelectTheme];
+    
+    [[ECardManAppDelegate core]->viewController->mViewPersonalize release];
+    [ECardManAppDelegate core]->viewController->mViewPersonalize = nil;
+}
+
 
 - (void)textViewDidChange:(UITextView *)textView {
     [mLabel setText:mTextView.text];

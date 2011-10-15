@@ -14,5 +14,6 @@
 }
 
 - (IBAction)clickHome:(id)sender;
+- (IBAction)clickBack:(id)sender;
 
 @end

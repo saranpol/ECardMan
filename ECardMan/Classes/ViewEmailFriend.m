@@ -65,5 +65,13 @@
     [ECardManAppDelegate core]->viewController->mViewEmailFriend = nil;
 }
 
+- (IBAction)clickBack:(id)sender {
+	[self.view removeFromSuperview];
+    [[ECardManAppDelegate core]->viewController gotoViewPersonalize];
+    
+    [[ECardManAppDelegate core]->viewController->mViewEmailFriend release];
+    [ECardManAppDelegate core]->viewController->mViewEmailFriend = nil;
+}
+
 
 @end
