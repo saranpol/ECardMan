@@ -10,9 +10,15 @@
 
 
 @interface ViewChooseYourself : UIViewController {
-
+@public
+	IBOutlet UIScrollView *mScrollView;
+	NSMutableArray *mImageList;
 }
+
+@property (nonatomic, retain) IBOutlet UIScrollView *mScrollView;
 
 -(IBAction)clickNext:(id)sender;
 -(IBAction)clickBack:(id)sender;
+-(IBAction)clickReload:(id)sender;
+- (void)receivedJson:(NSDictionary*)data;
 @end

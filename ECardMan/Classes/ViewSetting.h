@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #define DEFAULT_SUBMIT_URL @"http://203.150.224.154/~estee/eventlive/index.php/register/create"
+#define DEFAULT_LIST_URL @"http://203.150.224.154/~estee/eventlive/index.php/register/jsonlists"
 
 @interface ViewSetting : UIViewController {
 @public
