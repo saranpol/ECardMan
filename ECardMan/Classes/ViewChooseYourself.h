@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-
-@interface ViewChooseYourself : UIViewController {
+#define NUM_PHOTO_PER_PAGE 10
+@interface ViewChooseYourself : UIViewController <UIScrollViewDelegate> {
 @public
 	IBOutlet UIScrollView *mScrollView;
 	NSMutableArray *mImageList;
+	int mPage;
+	BOOL mShouldHaveNext;
 }
 
 @property (nonatomic, retain) IBOutlet UIScrollView *mScrollView;
@@ -21,4 +23,5 @@
 -(IBAction)clickBack:(id)sender;
 -(IBAction)clickReload:(id)sender;
 - (void)receivedJson:(NSDictionary*)data;
+- (void)shouldLoadData;
 @end

@@ -68,7 +68,7 @@
 		NSArray *list = [data objectForKey:@"data"];
 		int x = 0;
 		int y = 0;
-		int width = 300;
+		int width = 150;
 		int i = 0;
 		for(NSDictionary *a in list){
 			NSString *img = [a objectForKey:@"img"];
@@ -78,7 +78,7 @@
 			
 			CGRect frame;
 			frame.size.width=width; frame.size.height=200;
-			frame.origin.x=x; frame.origin.y=y;
+			frame.origin.x=(mPage-1)*mScrollView.frame.size.width+x; frame.origin.y=y;
 			AsyncImageView* asyncImage = [[[AsyncImageView alloc] initWithFrame:frame] autorelease];
 			[mImageList addObject:asyncImage];
 			asyncImage.tag = i;
@@ -87,7 +87,7 @@
 			[mScrollView addSubview:asyncImage];
 			x += width+10;
 
-			if(x > 1024-width){
+			if(i == 4){
 				x = 0;
 				y = 300;
 			}
@@ -95,14 +95,37 @@
 			i++;
 
 		}
+		
+		if(i == 10){
+			mShouldHaveNext = YES;
+		}else {
+			mShouldHaveNext = NO;
+			int new_width = mScrollView.contentSize.width - mScrollView.frame.size.width;
+			[mScrollView setContentSize:CGSizeMake(new_width, mScrollView.frame.size.height)];
+		}
+
 	}
 		
+}
+
+- (void)refreshPhoto {
+	mPage = 0;
+	mShouldHaveNext = YES;
+	for (AsyncImageView *v in mImageList) {
+		[v removeFromSuperview];
+	}
+	[mScrollView setContentSize:CGSizeMake(mScrollView.frame.size.width, mScrollView.frame.size.height)];
+	[mScrollView setContentOffset:CGPointMake(0, 0)];
+	
+	[mImageList removeAllObjects];
+	[self shouldLoadData];
+	
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 	mImageList = [[NSMutableArray alloc] init];
-	[self getListData:self size:10 page:0];
+	[self refreshPhoto];
 }
 
 
@@ -144,12 +167,24 @@
 }
 
 -(IBAction)clickReload:(id)sender {
-	for (AsyncImageView *v in mImageList) {
-		[v removeFromSuperview];
-	}
-	[mImageList removeAllObjects];
-	[self getListData:self size:10 page:0];
+	[self refreshPhoto];
 }
 
+- (void)shouldLoadData {
+	if((mScrollView.contentOffset.x >= (mScrollView.contentSize.width - mScrollView.frame.size.width))
+	   && mShouldHaveNext){
+		NSLog(@"Load new page");
+		[self getListData:self size:NUM_PHOTO_PER_PAGE page:mPage];
+		mPage += 1;
+		int new_width = mScrollView.contentSize.width + mScrollView.frame.size.width;
+		[mScrollView setContentSize:CGSizeMake(new_width, mScrollView.frame.size.height)];
+
+	}
+	
+}
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+	NSLog(@"content x %f",scrollView.contentOffset.x);
+	[self shouldLoadData];
+}
 
 @end
