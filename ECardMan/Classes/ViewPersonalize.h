@@ -14,15 +14,20 @@
 	IBOutlet UIImageView *mImage;
     IBOutlet UILabel *mLabel;
     IBOutlet UITextView *mTextView;
+	IBOutlet UITextField *mNameTextField;
+	IBOutlet UITextField *mEmailTextField;	
     IBOutlet UIView *mView;
 }
 
 @property (nonatomic, retain) IBOutlet UIImageView *mImage;
 @property (nonatomic, retain) IBOutlet UILabel *mLabel;
+@property (nonatomic, retain) IBOutlet UITextField *mNameTextField;
+@property (nonatomic, retain) IBOutlet UITextField *mEmailTextField;	
 @property (nonatomic, retain) IBOutlet UITextView *mTextView;
 @property (nonatomic, retain) IBOutlet UIView *mView;
 
 - (IBAction)clickNext:(id)sender;
 - (IBAction)clickBack:(id)sender;
+- (void)setup;
 
 @end

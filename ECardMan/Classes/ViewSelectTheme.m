@@ -10,6 +10,7 @@
 #import "ECardManAppDelegate.h"
 #import "ECardManViewController.h"
 #import "ViewTheme.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation ViewSelectTheme
 
@@ -26,12 +27,18 @@
 }
 */
 
+- (void)deselectAllTheme {
+	for(ViewTheme *v in mViewThemeArray)
+        v.view.layer.borderWidth = 0.0f;
+}
+
 - (IBAction)clickTheme:(id)sender {
-    for(ViewTheme *v in mViewThemeArray)
-        [v.view setBackgroundColor:[UIColor blackColor]];
+	[self deselectAllTheme];
     UIControl *v = (UIControl*)sender;
+	v.layer.borderColor = [UIColor redColor].CGColor;
+	v.layer.borderWidth = 5.0f;
+	[ECardManAppDelegate core]->viewController->mCurrentThemeId = v.tag;
     NSLog(@"ssss %d", v.tag);
-    [v setBackgroundColor:[UIColor blueColor]];
 }
 
 - (void)viewDidLoad {

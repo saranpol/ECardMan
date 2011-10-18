@@ -15,6 +15,8 @@
 
 @synthesize mImage;
 @synthesize mLabel;
+@synthesize mNameTextField;
+@synthesize mEmailTextField;	
 @synthesize mTextView;
 @synthesize mView;
 
@@ -47,6 +49,15 @@
     }
 } 
 
+- (void)setup {
+	if([ECardManAppDelegate core]->viewController->mViewChooseYourself->mCurrentItem){
+		[mNameTextField setText:[[ECardManAppDelegate core]->viewController->mViewChooseYourself->mCurrentItem objectForKey:@"name"]];
+		[mEmailTextField setText:[[ECardManAppDelegate core]->viewController->mViewChooseYourself->mCurrentItem objectForKey:@"email"]];
+	}else{
+		[mNameTextField setText:@""];
+		[mEmailTextField setText:@""];
+	}
+}
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -92,6 +103,8 @@
 	
     [mImage release];
     [mLabel release];
+	[mNameTextField release];
+	[mEmailTextField release];
     [mTextView release];
     [mView release];
     [super dealloc];

@@ -11,11 +11,12 @@
 #import "ECardManViewController.h"
 #import "HttpRequest.h"
 #import "AsyncImageView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation ViewChooseYourself
 
 @synthesize mScrollView;
-
+@synthesize mNextButton;
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -37,7 +38,8 @@
 	NSString *list_url;
 	
 	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-	list_url = [prefs objectForKey:@"mListUrl"];
+	list_url = [prefs objectForKey:@"mGetBeforePhotoUrl"];
+	
 	if(!list_url)
 		list_url = DEFAULT_LIST_URL;
 
@@ -55,9 +57,30 @@
     [http_request _receiveDidStart];
 }
 
+- (void)deselectAllPhoto {
+	for(AsyncImageView *a in mImageList){
+		a.layer.borderWidth = 0.0f;
+	}
+}
+
 - (IBAction)clickPhoto:(id)sender {
+	[self deselectAllPhoto];
 	// select photo
-	NSLog(@"select photo");
+	AsyncImageView *asyncImage = (AsyncImageView*)sender;
+	asyncImage.layer.borderColor = [UIColor redColor].CGColor;
+	asyncImage.layer.borderWidth = 5.0f;
+	
+	NSDictionary *a = [mDataList objectAtIndex:asyncImage.tag];
+	NSString *img = [a objectForKey:@"img"];
+	NSString *register_id = [a objectForKey:@"register_id"];
+	NSString *name = [a objectForKey:@"name"];
+	NSString *email = [a objectForKey:@"email"];
+	
+	mCurrentItem = a;
+	mCurrentImage = [asyncImage image];
+	mNextButton.hidden = NO; 
+	
+	NSLog(@"select photo %@ %@ %@ %@", img, register_id, name, email);
 }
 
 - (void)receivedJson:(NSDictionary*)data {
@@ -68,20 +91,18 @@
 		NSArray *list = [data objectForKey:@"data"];
 		int x = 0;
 		int y = 0;
-		int width = 150;
+		int width = 180;
 		int i = 0;
 		for(NSDictionary *a in list){
 			NSString *img = [a objectForKey:@"img"];
-			NSString *register_id = [a objectForKey:@"register_id"];
-			NSString *name = [a objectForKey:@"name"];
-			NSString *email = [a objectForKey:@"email"];
-			
+		
 			CGRect frame;
-			frame.size.width=width; frame.size.height=200;
+			frame.size.width=width; frame.size.height=135;
 			frame.origin.x=(mPage-1)*mScrollView.frame.size.width+x; frame.origin.y=y;
 			AsyncImageView* asyncImage = [[[AsyncImageView alloc] initWithFrame:frame] autorelease];
 			[mImageList addObject:asyncImage];
-			asyncImage.tag = i;
+			asyncImage.tag = [mDataList count];
+			[mDataList addObject:a];
 			NSURL* url = [NSURL URLWithString:img];
 			[asyncImage loadImageFromURL:url];
 			[mScrollView addSubview:asyncImage];
@@ -89,7 +110,7 @@
 
 			if(i == 4){
 				x = 0;
-				y = 300;
+				y = 250;
 			}
 			[asyncImage addTarget:self action:@selector(clickPhoto:) forControlEvents:UIControlEventTouchUpInside];
 			i++;
@@ -118,6 +139,9 @@
 	[mScrollView setContentOffset:CGPointMake(0, 0)];
 	
 	[mImageList removeAllObjects];
+	[mDataList removeAllObjects];
+	mNextButton.hidden = YES;
+	
 	[self shouldLoadData];
 	
 }
@@ -125,6 +149,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	mImageList = [[NSMutableArray alloc] init];
+	mDataList = [[NSMutableArray alloc] init];
 	[self refreshPhoto];
 }
 
@@ -152,7 +177,9 @@
 
 - (void)dealloc {
 	[mScrollView release];
+	[mNextButton release];
 	[mImageList release];
+	[mDataList release];
     [super dealloc];
 }
 

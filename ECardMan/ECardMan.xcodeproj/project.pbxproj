@@ -15,6 +15,7 @@
 		2899E5220DE3E06400AC0155 /* ECardManViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* ECardManViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* ECardManViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* ECardManViewController.m */; };
+		43BC671A144E09C6000FEC6E /* choose_yourself_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 43BC6719144E09C6000FEC6E /* choose_yourself_default.png */; };
 		43C6007114421EFF001E16D7 /* ViewHowToPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C6006F14421EFF001E16D7 /* ViewHowToPlay.m */; };
 		43C6007214421EFF001E16D7 /* ViewHowToPlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C6007014421EFF001E16D7 /* ViewHowToPlay.xib */; };
 		43C6008A14423459001E16D7 /* ViewChooseYourself.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C6008814423459001E16D7 /* ViewChooseYourself.m */; };
@@ -64,6 +65,7 @@
 		28D7ACF70DDB3853001CB0EB /* ECardManViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECardManViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* ECardMan_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECardMan_Prefix.pch; sourceTree = "<group>"; };
+		43BC6719144E09C6000FEC6E /* choose_yourself_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = choose_yourself_default.png; sourceTree = "<group>"; };
 		43C6006E14421EFF001E16D7 /* ViewHowToPlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewHowToPlay.h; sourceTree = "<group>"; };
 		43C6006F14421EFF001E16D7 /* ViewHowToPlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewHowToPlay.m; sourceTree = "<group>"; };
 		43C6007014421EFF001E16D7 /* ViewHowToPlay.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewHowToPlay.xib; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				43BC6718144E09C6000FEC6E /* images */,
 				52D0C0CA144A1B2F007967D4 /* util */,
 				52D0C0AC144A1AF5007967D4 /* json */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -230,6 +233,14 @@
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43BC6718144E09C6000FEC6E /* images */ = {
+			isa = PBXGroup;
+			children = (
+				43BC6719144E09C6000FEC6E /* choose_yourself_default.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		52D0C0AC144A1AF5007967D4 /* json */ = {
@@ -336,6 +347,7 @@
 				43C6011014424AD6001E16D7 /* ViewThankYou.xib in Resources */,
 				521145921448DB8B005548B7 /* ViewTheme.xib in Resources */,
 				523AF7CC1449F5F500C8F76C /* ViewSetting.xib in Resources */,
+				43BC671A144E09C6000FEC6E /* choose_yourself_default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

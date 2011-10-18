@@ -61,9 +61,5 @@
 	[self.view removeFromSuperview];
 }
 
-- (IBAction)clickBack:(id)sender {
-	[self.view removeFromSuperview];
-    [[ECardManAppDelegate core]->viewController gotoViewSend];
-}
 
 @end

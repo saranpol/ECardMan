@@ -11,6 +11,7 @@
 @implementation ViewSetting
 
 @synthesize mSubmitUrl;
+@synthesize mGetBeforePhotoUrl;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,6 +40,11 @@
 		mSubmitUrl.text = DEFAULT_SUBMIT_URL;
 	else
 		mSubmitUrl.text = url;
+	NSString *url2 = [prefs objectForKey:@"mGetBeforePhotoUrl"];
+	if(!url2)
+		mGetBeforePhotoUrl.text = DEFAULT_LIST_URL;
+	else
+		mGetBeforePhotoUrl.text = url2;
     
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -64,11 +70,13 @@
 - (IBAction)clickSaveButton:(id)sender {
 	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
 	[prefs setObject:mSubmitUrl.text forKey:@"mSubmitUrl"];
+	[prefs setObject:mGetBeforePhotoUrl.text forKey:@"mGetBeforePhotoUrl"];
 	[prefs synchronize];
 }
 
 - (IBAction)clickDefaultButton:(id)sender {
 	mSubmitUrl.text = DEFAULT_SUBMIT_URL;
+	mGetBeforePhotoUrl.text = DEFAULT_LIST_URL;
 	[self clickSaveButton:nil];
 }
 
@@ -76,6 +84,7 @@
 
 - (void)dealloc {
 	[mSubmitUrl release];
+	[mGetBeforePhotoUrl release];
     [super dealloc];
 }
 

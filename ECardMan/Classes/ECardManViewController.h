@@ -33,6 +33,8 @@
 	UIPopoverController *mPopoverController;
     
     UIImage *mEcardImage;
+	
+	int mCurrentThemeId;
 
 }
 -(void)gotoViewHowToPlay;

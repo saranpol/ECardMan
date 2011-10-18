@@ -54,6 +54,20 @@
 
 - (void)dealloc {
     [mImage release];
+	
+	[mName1 release];
+	[mName2 release];
+	[mName3 release];
+	[mName4 release];
+	[mName5 release];
+	
+	[mEmail1 release];
+	[mEmail2 release];
+	[mEmail3 release];
+	[mEmail4 release];
+	[mEmail5 release];
+	
+	
     [super dealloc];
 }
 
@@ -61,6 +75,19 @@
 	[self.view removeFromSuperview];
 	[[ECardManAppDelegate core]->viewController gotoViewSend];
     
+	[ECardManAppDelegate core]->viewController->mViewSend->mName_1 = [mName1.text copy];
+	[ECardManAppDelegate core]->viewController->mViewSend->mName_2 = [mName2.text copy];	
+	[ECardManAppDelegate core]->viewController->mViewSend->mName_3 = [mName3.text copy];
+	[ECardManAppDelegate core]->viewController->mViewSend->mName_4 = [mName4.text copy];	
+	[ECardManAppDelegate core]->viewController->mViewSend->mName_5 = [mName5.text copy];	
+
+	[ECardManAppDelegate core]->viewController->mViewSend->mEmail_1 = [mEmail1.text copy];
+	[ECardManAppDelegate core]->viewController->mViewSend->mEmail_2 = [mEmail2.text copy];	
+	[ECardManAppDelegate core]->viewController->mViewSend->mEmail_3 = [mEmail3.text copy];
+	[ECardManAppDelegate core]->viewController->mViewSend->mEmail_4 = [mEmail4.text copy];	
+	[ECardManAppDelegate core]->viewController->mViewSend->mEmail_5 = [mEmail5.text copy];	
+	
+	
     [[ECardManAppDelegate core]->viewController->mViewEmailFriend release];
     [ECardManAppDelegate core]->viewController->mViewEmailFriend = nil;
 }

@@ -14,6 +14,7 @@
 @implementation ViewSend
 
 @synthesize mImage;
+@synthesize mLoadingView;
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
@@ -55,6 +56,30 @@
 
 - (void)dealloc {
     [mImage release];
+	[mLoadingView release];
+	
+	if(mEmail_1)
+		[mEmail_1 release];
+	if(mEmail_2)
+		[mEmail_2 release];
+	if(mEmail_3)
+		[mEmail_3 release];
+	if(mEmail_4)
+		[mEmail_4 release];
+	if(mEmail_5)
+		[mEmail_5 release];
+
+	if(mName_1)
+		[mName_1 release];
+	if(mName_2)
+		[mName_2 release];
+	if(mName_3)
+		[mName_3 release];
+	if(mName_4)
+		[mName_4 release];
+	if(mName_5)
+		[mName_5 release];
+
     [super dealloc];
 }
 
@@ -90,26 +115,41 @@
 	if(!submit_url)
 		submit_url = DEFAULT_SUBMIT_URL;
 	
+	NSString *register_id = [[ECardManAppDelegate core]->viewController->mViewChooseYourself->mCurrentItem objectForKey:@"register_id"];
+	submit_url = [submit_url stringByAppendingFormat:@"/%@", register_id];
+	
 	NSMutableURLRequest *request = [self create_request:submit_url];
 	
 	
-	HttpRequest *http_request = [[[HttpRequest alloc] init] autorelease];
-	http_request->mListener = listener;
+	m_http_request = [[[HttpRequest alloc] init] autorelease];
+	m_http_request->mListener = listener;
 	
 	//[http_request cancel_connect];
-	assert(http_request.connection == nil);
+	assert(m_http_request.connection == nil);
 	
 	NSMutableData *post_data = [NSMutableData data];
 	
 	NSMutableDictionary *post_data_arr = [NSMutableDictionary dictionaryWithCapacity:0];
-	[post_data_arr setObject:name forKey:@"Register[name]"];
-	[post_data_arr setObject:tel forKey:@"Register[phone]"];
-	[post_data_arr setObject:email forKey:@"Register[email]"];
-	[post_data_arr setObject:@"0" forKey:@"Register[hidden]"];	
+	
+	
+	[post_data_arr setObject:mEmail_1 forKey:@"AfterForm[friend_1_email]"];
+	[post_data_arr setObject:mEmail_2 forKey:@"AfterForm[friend_2_email]"];
+	[post_data_arr setObject:mEmail_3 forKey:@"AfterForm[friend_3_email]"];
+	[post_data_arr setObject:mEmail_4 forKey:@"AfterForm[friend_4_email]"];
+	[post_data_arr setObject:mEmail_5 forKey:@"AfterForm[friend_5_email]"];
+
+	[post_data_arr setObject:mName_1 forKey:@"AfterForm[friend_1_name]"];
+	[post_data_arr setObject:mName_2 forKey:@"AfterForm[friend_2_name]"];
+	[post_data_arr setObject:mName_3 forKey:@"AfterForm[friend_3_name]"];
+	[post_data_arr setObject:mName_4 forKey:@"AfterForm[friend_4_name]"];
+	[post_data_arr setObject:mName_5 forKey:@"AfterForm[friend_5_name]"];
+
+	
+	
 	NSString *post_data_multipart = [self arrayToMultipart:post_data_arr boundary:BOUNDARY];
 	NSData *image_data = UIImageJPEGRepresentation(image, 1.0);
 	post_data_multipart = [post_data_multipart stringByAppendingFormat:@"--%@\r\n", BOUNDARY];
-	post_data_multipart = [post_data_multipart stringByAppendingString:@"Content-Disposition: form-data; name=\"Register[image]\"; filename=\"save.jpg\"\r\n"];
+	post_data_multipart = [post_data_multipart stringByAppendingString:@"Content-Disposition: form-data; name=\"AfterForm[image]\"; filename=\"save.jpg\"\r\n"];
 	post_data_multipart = [post_data_multipart stringByAppendingString:@"Content-Type: image/jpeg\r\n\r\n"];
 	[post_data appendData:[post_data_multipart dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES]];
 	[post_data appendData:image_data];
@@ -137,11 +177,11 @@
 	[request setHTTPBody:post_data];
 	
 	
-	http_request.connection = [NSURLConnection connectionWithRequest:request delegate:http_request];
-	assert(http_request.connection != nil);
+	m_http_request.connection = [NSURLConnection connectionWithRequest:request delegate:m_http_request];
+	assert(m_http_request.connection != nil);
 	
 	// Tell the UI we're receiving.
-    [http_request _receiveDidStart];
+    [m_http_request _receiveDidStart];
 }
 
 
@@ -159,10 +199,13 @@
 
     
 - (IBAction)clickSend:(id)sender {
+	mLoadingView.hidden = NO;
     [self sendEcardData:self name:@"Ecard" tel:@"111" email:@"asdf@asdf.com" image:mImage.image];
 }
 
 - (IBAction)clickBack:(id)sender {
+	[m_http_request cancel_connect];
+	
 	[self.view removeFromSuperview];
     [[ECardManAppDelegate core]->viewController gotoViewEmailFriend];
     

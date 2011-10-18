@@ -12,12 +12,17 @@
 @interface ViewChooseYourself : UIViewController <UIScrollViewDelegate> {
 @public
 	IBOutlet UIScrollView *mScrollView;
+	IBOutlet UIButton *mNextButton;
 	NSMutableArray *mImageList;
+	NSMutableArray *mDataList;
 	int mPage;
 	BOOL mShouldHaveNext;
+	NSDictionary *mCurrentItem;
+	UIImage *mCurrentImage;
 }
 
 @property (nonatomic, retain) IBOutlet UIScrollView *mScrollView;
+@property (nonatomic, retain) IBOutlet UIButton *mNextButton;
 
 -(IBAction)clickNext:(id)sender;
 -(IBAction)clickBack:(id)sender;

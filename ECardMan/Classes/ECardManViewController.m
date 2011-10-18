@@ -162,6 +162,12 @@
 	
 	UIImage *original_image =[info objectForKey:UIImagePickerControllerOriginalImage];
 	[mViewBeforeAfter.mAfterImage setImage:[self rotateImage:original_image byOrientationFlag:original_image.imageOrientation]];
+	if(mViewChooseYourself->mCurrentImage)
+		[mViewBeforeAfter.mBeforeImage setImage:mViewChooseYourself->mCurrentImage];
+	else {
+		[mViewBeforeAfter.mBeforeImage setImage:[UIImage imageNamed:@"choose_yourself_default.png"]];
+	}
+
 
 }
 
@@ -215,6 +221,7 @@
 	if(!mViewPersonalize)
 		mViewPersonalize = [[ViewPersonalize alloc] initWithNibName:@"ViewPersonalize" bundle:nil];
 	[self.view addSubview:mViewPersonalize.view];
+	[mViewPersonalize setup];
 }
 
 -(void)gotoViewEmailFriend {
