@@ -22,16 +22,16 @@
 	};
 	28D7ACF60DDB3853001CB0EB /* ECardManViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1321, 1026}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1321, 1064}}";
 			sepNavSelRange = "{1093, 16}";
-			sepNavVisRange = "{285, 835}";
+			sepNavVisRange = "{257, 891}";
 		};
 	};
 	28D7ACF70DDB3853001CB0EB /* ECardManViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1340, 4731}}";
-			sepNavSelRange = "{7019, 5}";
-			sepNavVisRange = "{6467, 1044}";
+			sepNavIntBoundsRect = "{{0, 0}, {1321, 4845}}";
+			sepNavSelRange = "{5197, 0}";
+			sepNavVisRange = "{4218, 1014}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -285,7 +285,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* ECardManViewController.m */;
 		name = "ECardManViewController.m: 224";
 		rLen = 5;
-		rLoc = 7019;
+		rLoc = 7054;
 		rType = 0;
 		vrLen = 1044;
 		vrLoc = 6467;
@@ -745,7 +745,7 @@
 		fRef = 43C600D814423ECF001E16D7 /* ViewBeforeAfter.m */;
 		name = "ViewBeforeAfter.m: 33";
 		rLen = 0;
-		rLoc = 868;
+		rLoc = 902;
 		rType = 0;
 		vrLen = 596;
 		vrLoc = 1160;
@@ -883,9 +883,9 @@
 	};
 	43C6008814423459001E16D7 /* ViewChooseYourself.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1321, 4237}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1321, 4123}}";
 			sepNavSelRange = "{4241, 0}";
-			sepNavVisRange = "{3764, 669}";
+			sepNavVisRange = "{3479, 787}";
 		};
 	};
 	43C600A7144236FF001E16D7 /* PlistBookmark */ = {
@@ -918,16 +918,16 @@
 	};
 	43C600D714423ECF001E16D7 /* ViewBeforeAfter.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1321, 589}}";
-			sepNavSelRange = "{431, 33}";
-			sepNavVisRange = "{0, 471}";
+			sepNavIntBoundsRect = "{{0, 0}, {1321, 591}}";
+			sepNavSelRange = "{520, 0}";
+			sepNavVisRange = "{0, 526}";
 		};
 	};
 	43C600D814423ECF001E16D7 /* ViewBeforeAfter.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1321, 1444}}";
-			sepNavSelRange = "{868, 0}";
-			sepNavVisRange = "{1160, 596}";
+			sepNavIntBoundsRect = "{{0, 0}, {1321, 1786}}";
+			sepNavSelRange = "{1826, 11}";
+			sepNavVisRange = "{1638, 1061}";
 		};
 	};
 	43C600EA144242DE001E16D7 /* ViewSelectTheme.h */ = {
@@ -955,7 +955,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1308, 2717}}";
 			sepNavSelRange = "{1769, 0}";
-			sepNavVisRange = "{1116, 1054}";
+			sepNavVisRange = "{1116, 994}";
 		};
 	};
 	43C6010014424A5E001E16D7 /* ViewEmailFriend.h */ = {
@@ -983,22 +983,22 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1292, 3781}}";
 			sepNavSelRange = "{6191, 0}";
-			sepNavVisRange = "{5659, 762}";
+			sepNavVisRange = "{5659, 658}";
 			sepNavWindowFrame = "{{15, 82}, {1548, 941}}";
 		};
 	};
 	43C6010C14424AD6001E16D7 /* ViewThankYou.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1321, 632}}";
-			sepNavSelRange = "{209, 0}";
-			sepNavVisRange = "{0, 287}";
+			sepNavIntBoundsRect = "{{0, 0}, {1321, 568}}";
+			sepNavSelRange = "{247, 0}";
+			sepNavVisRange = "{0, 253}";
 		};
 	};
 	43C6010D14424AD6001E16D7 /* ViewThankYou.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1321, 1254}}";
-			sepNavSelRange = "{1429, 0}";
-			sepNavVisRange = "{952, 486}";
+			sepNavSelRange = "{1315, 0}";
+			sepNavVisRange = "{428, 746}";
 		};
 	};
 	43C6012414424C82001E16D7 /* PBXTextBookmark */ = {

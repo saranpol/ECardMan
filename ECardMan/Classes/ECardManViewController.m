@@ -167,6 +167,8 @@
 	else {
 		[mViewBeforeAfter.mBeforeImage setImage:[UIImage imageNamed:@"choose_yourself_default.png"]];
 	}
+	
+	[mViewBeforeAfter effectImage];
 
 
 }

@@ -9,6 +9,7 @@
 #import "ViewBeforeAfter.h"
 #import "ECardManAppDelegate.h"
 #import "ECardManViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation ViewBeforeAfter
 
@@ -71,5 +72,26 @@
     [[ECardManAppDelegate core]->viewController gotoViewChooseYourself];
 }
 
+- (void)effectImage {
+	mBeforeImage.layer.shadowOffset = CGSizeMake(0, -1); 
+	mBeforeImage.layer.shadowOpacity = 1; 
+	mBeforeImage.layer.shadowColor = [UIColor whiteColor].CGColor; 
+	CALayer *layer = mBeforeImage.layer;
+	CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
+	rotationAndPerspectiveTransform.m34 = 1.0 / -500;
+	rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, 20.0f * M_PI / 180.0f, 0.0f, 1.0f, 0.0f);
+	layer.transform = rotationAndPerspectiveTransform;
+
+	
+	mAfterImage.layer.shadowOffset = CGSizeMake(0, -1); 
+	mAfterImage.layer.shadowOpacity = 1; 
+	mAfterImage.layer.shadowColor = [UIColor whiteColor].CGColor; 
+	CALayer *layer2 = mAfterImage.layer;
+	CATransform3D rotationAndPerspectiveTransform2 = CATransform3DIdentity;
+	rotationAndPerspectiveTransform2.m34 = 1.0 / -500;
+	rotationAndPerspectiveTransform2 = CATransform3DRotate(rotationAndPerspectiveTransform2, -20.0f * M_PI / 180.0f, 0.0f, 1.0f, 0.0f);
+	layer2.transform = rotationAndPerspectiveTransform2;
+	
+}
 
 @end

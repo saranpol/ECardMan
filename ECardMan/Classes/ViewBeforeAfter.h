@@ -20,5 +20,6 @@
 
 - (IBAction)clickNext:(id)sender;
 - (IBAction)clickBack:(id)sender;
+- (void)effectImage;
 
 @end
