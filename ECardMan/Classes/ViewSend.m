@@ -138,7 +138,7 @@
 	return [NSMutableURLRequest requestWithURL:url];
 }
 
-- (void)sendEcardData:(id)listener name:(NSString*)name tel:(NSString*)tel email:(NSString*)email image:(UIImage*)image {
+- (void)sendEcardData:(id)listener name:(NSString*)name tel:(NSString*)tel email:(NSString*)email image:(UIImage*)image image2:(UIImage*)image2 {
 	//NSMutableURLRequest *request = [self create_request:@"http://api.hlpth.com/test_upload/"];
 	
 	NSString *submit_url;
@@ -176,16 +176,26 @@
 	[post_data_arr setObject:mName_3 forKey:@"AfterForm[friend_3_name]"];
 	[post_data_arr setObject:mName_4 forKey:@"AfterForm[friend_4_name]"];
 	[post_data_arr setObject:mName_5 forKey:@"AfterForm[friend_5_name]"];
-
+	
+	//[post_data_arr setObject:@"true" forKey:@"is_web"];
 	
 	
 	NSString *post_data_multipart = [self arrayToMultipart:post_data_arr boundary:BOUNDARY];
 	NSData *image_data = UIImageJPEGRepresentation(image, 1.0);
 	post_data_multipart = [post_data_multipart stringByAppendingFormat:@"--%@\r\n", BOUNDARY];
-	post_data_multipart = [post_data_multipart stringByAppendingString:@"Content-Disposition: form-data; name=\"AfterForm[image]\"; filename=\"save.jpg\"\r\n"];
+	post_data_multipart = [post_data_multipart stringByAppendingString:@"Content-Disposition: form-data; name=\"AfterForm[image]\"; filename=\"after.jpg\"\r\n"];
 	post_data_multipart = [post_data_multipart stringByAppendingString:@"Content-Type: image/jpeg\r\n\r\n"];
 	[post_data appendData:[post_data_multipart dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES]];
 	[post_data appendData:image_data];
+	
+	NSData *image_data2 = UIImageJPEGRepresentation(image2, 1.0);
+	post_data_multipart = [NSString stringWithFormat:@"\r\n--%@\r\n", BOUNDARY];
+	post_data_multipart = [post_data_multipart stringByAppendingString:@"Content-Disposition: form-data; name=\"AfterForm[ecard]\"; filename=\"ecard.jpg\"\r\n"];
+	post_data_multipart = [post_data_multipart stringByAppendingString:@"Content-Type: image/jpeg\r\n\r\n"];
+	[post_data appendData:[post_data_multipart dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES]];
+	[post_data appendData:image_data2];
+	
+		
 	NSString *end_str = [NSString stringWithFormat:@"\r\n--%@--", BOUNDARY];
 	[post_data appendData:[end_str dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES]];
 	
@@ -233,7 +243,8 @@
     
 - (IBAction)clickSend:(id)sender {
 	mLoadingView.hidden = NO;
-    [self sendEcardData:self name:@"Ecard" tel:@"111" email:@"asdf@asdf.com" image:mImage.image];
+	UIImage *before_image = [ECardManAppDelegate core]->viewController->mViewBeforeAfter.mAfterImage.image;
+    [self sendEcardData:self name:@"Ecard" tel:@"111" email:@"asdf@asdf.com" image:before_image image2:mImage.image];
 }
 
 - (IBAction)clickBack:(id)sender {
