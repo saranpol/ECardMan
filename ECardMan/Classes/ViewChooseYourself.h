@@ -14,6 +14,7 @@
 	IBOutlet UIScrollView *mScrollView;
 	IBOutlet UIButton *mNextButton;
 	NSMutableArray *mImageList;
+	NSMutableArray *mLabelList;
 	NSMutableArray *mDataList;
 	int mPage;
 	BOOL mShouldHaveNext;

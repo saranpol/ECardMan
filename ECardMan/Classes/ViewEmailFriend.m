@@ -13,6 +13,18 @@
 @implementation ViewEmailFriend
 @synthesize mImage;
 
+@synthesize mName1;
+@synthesize mName2;
+@synthesize mName3;
+@synthesize mName4;
+@synthesize mName5;
+
+@synthesize mEmail1;
+@synthesize mEmail2;
+@synthesize mEmail3;
+@synthesize mEmail4;
+@synthesize mEmail5;
+
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -117,7 +129,7 @@
 	[ECardManAppDelegate core]->viewController->mViewSend->mEmail_3 = [mEmail3.text copy];
 	[ECardManAppDelegate core]->viewController->mViewSend->mEmail_4 = [mEmail4.text copy];	
 	[ECardManAppDelegate core]->viewController->mViewSend->mEmail_5 = [mEmail5.text copy];	
-	
+	[[ECardManAppDelegate core]->viewController->mViewSend setup];	
 	
     [[ECardManAppDelegate core]->viewController->mViewEmailFriend release];
     [ECardManAppDelegate core]->viewController->mViewEmailFriend = nil;

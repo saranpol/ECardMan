@@ -13,6 +13,7 @@
 @public
 	IBOutlet UIImageView *mImage;
 	IBOutlet UIView *mLoadingView;
+	IBOutlet UILabel *mFriendsLabel;
 
 	NSString *mEmail_1;
 	NSString *mEmail_2;
@@ -32,9 +33,11 @@
 
 @property (nonatomic, retain) IBOutlet UIImageView *mImage;
 @property (nonatomic, retain) IBOutlet UIView *mLoadingView;
+@property (nonatomic, retain) IBOutlet UILabel *mFriendsLabel;
 
 - (IBAction)clickSend:(id)sender;
 - (IBAction)clickBack:(id)sender;
 - (void)receivedJson:(NSDictionary*)data;
+- (void)setup;
 
 @end

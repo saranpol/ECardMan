@@ -15,6 +15,7 @@
 
 @synthesize mImage;
 @synthesize mLoadingView;
+@synthesize mFriendsLabel;
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
@@ -30,6 +31,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [mImage setImage:[ECardManAppDelegate core]->viewController->mEcardImage];
+}
+
+- (void)setup {
+	NSString *text = @"";
+	
+	if(mEmail_1 && mEmail_1.length > 0)
+		text = [text stringByAppendingFormat:@"%@", mEmail_1];
+	if(mName_1 && mName_1.length > 0)
+		text = [text stringByAppendingFormat:@" (%@)", mName_1];
+	
+	if(mEmail_2 && mEmail_2.length > 0)
+		text = [text stringByAppendingFormat:@", %@", mEmail_2];
+	if(mName_2 && mName_2.length > 0)
+		text = [text stringByAppendingFormat:@" (%@)", mName_2];
+	
+	if(mEmail_3 && mEmail_3.length > 0)
+		text = [text stringByAppendingFormat:@", %@", mEmail_3];
+	if(mName_3 && mName_3.length > 0)
+		text = [text stringByAppendingFormat:@" (%@)", mName_3];
+	
+	if(mEmail_4 && mEmail_4.length > 0)
+		text = [text stringByAppendingFormat:@", %@", mEmail_4];
+	if(mName_4 && mName_4.length > 0)
+		text = [text stringByAppendingFormat:@" (%@)", mName_4];
+	
+	if(mEmail_5 && mEmail_5.length > 0)
+		text = [text stringByAppendingFormat:@", %@", mEmail_5];
+	if(mName_5 && mName_5.length > 0)
+		text = [text stringByAppendingFormat:@" (%@)", mName_5];
+	
+	[mFriendsLabel setText:text];
 }
 
 
@@ -57,6 +89,7 @@
 - (void)dealloc {
     [mImage release];
 	[mLoadingView release];
+	[mFriendsLabel release];
 	
 	if(mEmail_1)
 		[mEmail_1 release];
@@ -208,7 +241,19 @@
 	
 	[self.view removeFromSuperview];
     [[ECardManAppDelegate core]->viewController gotoViewEmailFriend];
-    
+    [[ECardManAppDelegate core]->viewController->mViewEmailFriend->mName1 setText:mName_1];
+    [[ECardManAppDelegate core]->viewController->mViewEmailFriend->mName2 setText:mName_2];
+    [[ECardManAppDelegate core]->viewController->mViewEmailFriend->mName3 setText:mName_3];
+    [[ECardManAppDelegate core]->viewController->mViewEmailFriend->mName4 setText:mName_4];
+    [[ECardManAppDelegate core]->viewController->mViewEmailFriend->mName5 setText:mName_5];
+
+	[[ECardManAppDelegate core]->viewController->mViewEmailFriend->mEmail1 setText:mEmail_1];
+    [[ECardManAppDelegate core]->viewController->mViewEmailFriend->mEmail2 setText:mEmail_2];
+    [[ECardManAppDelegate core]->viewController->mViewEmailFriend->mEmail3 setText:mEmail_3];
+    [[ECardManAppDelegate core]->viewController->mViewEmailFriend->mEmail4 setText:mEmail_4];
+    [[ECardManAppDelegate core]->viewController->mViewEmailFriend->mEmail5 setText:mEmail_5];
+	
+	
     [[ECardManAppDelegate core]->viewController->mViewSend release];
     [ECardManAppDelegate core]->viewController->mViewSend = nil;
 }

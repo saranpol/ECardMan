@@ -95,17 +95,26 @@
 		int i = 0;
 		for(NSDictionary *a in list){
 			NSString *img = [a objectForKey:@"img"];
+			NSString *name = [a objectForKey:@"name"];
 		
 			CGRect frame;
 			frame.size.width=width; frame.size.height=135;
 			frame.origin.x=(mPage-1)*mScrollView.frame.size.width+x; frame.origin.y=y;
 			AsyncImageView* asyncImage = [[[AsyncImageView alloc] initWithFrame:frame] autorelease];
+			UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(frame.origin.x, y+140, 180, 40)] autorelease];
+			[label setText:name];
+			[label setBackgroundColor:[UIColor clearColor]];
+			[label setTextColor:[UIColor colorWithRed:237.0/255.0 green:195.0/255.0 blue:119.0/255.0 alpha:1.0]];
+			[label setTextAlignment:UITextAlignmentCenter];
+			
 			[mImageList addObject:asyncImage];
+			[mLabelList addObject:label];
 			asyncImage.tag = [mDataList count];
 			[mDataList addObject:a];
 			NSURL* url = [NSURL URLWithString:img];
 			[asyncImage loadImageFromURL:url];
 			[mScrollView addSubview:asyncImage];
+			[mScrollView addSubview:label];
 			x += width+10;
 
 			if(i == 4){
@@ -132,13 +141,16 @@
 - (void)refreshPhoto {
 	mPage = 0;
 	mShouldHaveNext = YES;
-	for (AsyncImageView *v in mImageList) {
+	for (AsyncImageView *v in mImageList)
 		[v removeFromSuperview];
-	}
+	for (UILabel *l in mLabelList)
+		[l removeFromSuperview];
+	
 	[mScrollView setContentSize:CGSizeMake(mScrollView.frame.size.width, mScrollView.frame.size.height)];
 	[mScrollView setContentOffset:CGPointMake(0, 0)];
 	
 	[mImageList removeAllObjects];
+	[mLabelList removeAllObjects];
 	[mDataList removeAllObjects];
 	mNextButton.hidden = YES;
 	
@@ -149,6 +161,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	mImageList = [[NSMutableArray alloc] init];
+	mLabelList = [[NSMutableArray alloc] init];
 	mDataList = [[NSMutableArray alloc] init];
 	[self refreshPhoto];
 }
@@ -179,6 +192,7 @@
 	[mScrollView release];
 	[mNextButton release];
 	[mImageList release];
+	[mLabelList release];
 	[mDataList release];
     [super dealloc];
 }
