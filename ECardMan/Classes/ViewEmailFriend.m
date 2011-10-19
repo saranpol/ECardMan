@@ -24,8 +24,37 @@
 }
 */
 
+// fix problem mTextView Content Offset Changed
+- (void)keyboardShowNotification:(NSNotification*)notification {  
+    if(self.view.frame.origin.y == 0){
+        CGRect frame = self.view.frame;
+        frame.origin.y = -170;
+        self.view.frame = frame;
+    }
+} 
+
+- (void)keyboardHideNotification:(NSNotification*)notification {  
+    if(self.view.frame.origin.y != 0){
+        CGRect frame = self.view.frame;
+        frame.origin.y = 0;
+        self.view.frame = frame;
+    }
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self  
+											 selector:@selector(keyboardShowNotification:)  
+												 name:UIKeyboardDidShowNotification  
+											   object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self  
+											 selector:@selector(keyboardHideNotification:)  
+												 name:UIKeyboardWillHideNotification  
+											   object:nil];
+	
 
     [mImage setImage:[ECardManAppDelegate core]->viewController->mEcardImage];
 }
@@ -53,6 +82,8 @@
 
 
 - (void)dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	
     [mImage release];
 	
 	[mName1 release];

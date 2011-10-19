@@ -11,6 +11,7 @@
 @implementation ViewTheme
 
 @synthesize mImage;
+@synthesize mImageBg;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -52,6 +53,7 @@
 
 - (void)dealloc {
     [mImage release];
+	[mImageBg release];
     [super dealloc];
 }
 

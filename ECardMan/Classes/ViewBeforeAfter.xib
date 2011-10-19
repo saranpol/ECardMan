@@ -133,7 +133,7 @@
 					<object class="IBUIImageView" id="709742757">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{516, 209}, {397, 291}}</string>
+						<string key="NSFrame">{{557, 232}, {340, 253}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -141,7 +141,7 @@
 					<object class="IBUIImageView" id="613108957">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{111, 209}, {397, 291}}</string>
+						<string key="NSFrame">{{126, 232}, {340, 253}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="IBUIContentStretch">{{1.38778e-17, 0}, {1, 1}}</string>
@@ -247,13 +247,13 @@
 						<reference key="object" ref="766721923"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="169314267"/>
 							<reference ref="59701699"/>
 							<reference ref="816573663"/>
 							<reference ref="709742757"/>
-							<reference ref="613108957"/>
 							<reference ref="1029027606"/>
 							<reference ref="222249406"/>
+							<reference ref="169314267"/>
+							<reference ref="613108957"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -265,11 +265,6 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">7</int>
 						<reference key="object" ref="613108957"/>
-						<reference key="parent" ref="766721923"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">13</int>
-						<reference key="object" ref="169314267"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -290,6 +285,11 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">17</int>
 						<reference key="object" ref="1029027606"/>
+						<reference key="parent" ref="766721923"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">13</int>
+						<reference key="object" ref="169314267"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 				</object>
@@ -326,7 +326,7 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABDxAAAw98AAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAAAAAAAAxCuAAA</bytes>
 					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -341,11 +341,11 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABEAQAAw+iAAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAABEB4AAw+iAAA</bytes>
 					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABC3gAAw+iAAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAABC+AAAw+2AAA</bytes>
 					</object>
 				</object>
 			</object>

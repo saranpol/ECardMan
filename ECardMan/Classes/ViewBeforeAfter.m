@@ -80,6 +80,7 @@
 	CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
 	rotationAndPerspectiveTransform.m34 = 1.0 / -500;
 	rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, 20.0f * M_PI / 180.0f, 0.0f, 1.0f, 0.0f);
+	rotationAndPerspectiveTransform = CATransform3DTranslate(rotationAndPerspectiveTransform, 0, 0, 100.0f);
 	layer.transform = rotationAndPerspectiveTransform;
 
 	
@@ -90,6 +91,7 @@
 	CATransform3D rotationAndPerspectiveTransform2 = CATransform3DIdentity;
 	rotationAndPerspectiveTransform2.m34 = 1.0 / -500;
 	rotationAndPerspectiveTransform2 = CATransform3DRotate(rotationAndPerspectiveTransform2, -20.0f * M_PI / 180.0f, 0.0f, 1.0f, 0.0f);
+	rotationAndPerspectiveTransform2 = CATransform3DTranslate(rotationAndPerspectiveTransform2, 0, 0, 100.0f);
 	layer2.transform = rotationAndPerspectiveTransform2;
 	
 }

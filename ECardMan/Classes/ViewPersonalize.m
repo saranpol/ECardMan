@@ -36,7 +36,7 @@
 - (void)keyboardShowNotification:(NSNotification*)notification {  
     if(self.view.frame.origin.y == 0){
         CGRect frame = self.view.frame;
-        frame.origin.y = -200;
+        frame.origin.y = -170;
         self.view.frame = frame;
     }
 } 

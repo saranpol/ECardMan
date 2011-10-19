@@ -11,7 +11,8 @@
 @interface ViewTheme : UIViewController {
 @public
 	IBOutlet UIImageView *mImage;
+	IBOutlet UIImageView *mImageBg;
 }
 @property (nonatomic, retain) IBOutlet UIImageView *mImage;
-
+@property (nonatomic, retain) IBOutlet UIImageView *mImageBg;
 @end

@@ -35,7 +35,7 @@
 - (IBAction)clickTheme:(id)sender {
 	[self deselectAllTheme];
     UIControl *v = (UIControl*)sender;
-	v.layer.borderColor = [UIColor redColor].CGColor;
+	v.layer.borderColor = [UIColor colorWithRed:237.0/255.0 green:195.0/255.0 blue:119.0/255.0 alpha:1.0].CGColor;
 	v.layer.borderWidth = 5.0f;
 	[ECardManAppDelegate core]->viewController->mCurrentThemeId = v.tag;
     NSLog(@"ssss %d", v.tag);
@@ -52,9 +52,9 @@
             v.view.tag = i*4+j;
             [(UIControl*)v.view addTarget:self action:@selector(clickTheme:) forControlEvents:UIControlEventTouchDown];
             CGRect frame = v.view.frame;
-            int x = 0;
+            int x = 50;
             if(j==1 || j==3)
-                x = 512;
+                x = 512+50;
             frame.origin.x = x+i*1024;
             if(j < 2)
                 frame.origin.y = 0;

@@ -67,7 +67,7 @@
 	[self deselectAllPhoto];
 	// select photo
 	AsyncImageView *asyncImage = (AsyncImageView*)sender;
-	asyncImage.layer.borderColor = [UIColor redColor].CGColor;
+	asyncImage.layer.borderColor = [UIColor colorWithRed:237.0/255.0 green:195.0/255.0 blue:119.0/255.0 alpha:1.0].CGColor;
 	asyncImage.layer.borderWidth = 5.0f;
 	
 	NSDictionary *a = [mDataList objectAtIndex:asyncImage.tag];
@@ -89,7 +89,7 @@
 	BOOL success = [[data objectForKey:@"success"] boolValue];
 	if(success){
 		NSArray *list = [data objectForKey:@"data"];
-		int x = 0;
+		int x = 40;
 		int y = 0;
 		int width = 180;
 		int i = 0;
@@ -109,7 +109,7 @@
 			x += width+10;
 
 			if(i == 4){
-				x = 0;
+				x = 40;
 				y = 250;
 			}
 			[asyncImage addTarget:self action:@selector(clickPhoto:) forControlEvents:UIControlEventTouchUpInside];
