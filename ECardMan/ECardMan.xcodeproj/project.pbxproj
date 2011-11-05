@@ -52,6 +52,8 @@
 		43C6011014424AD6001E16D7 /* ViewThankYou.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C6010E14424AD6001E16D7 /* ViewThankYou.xib */; };
 		521145911448DB8B005548B7 /* ViewTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 5211458F1448DB8B005548B7 /* ViewTheme.m */; };
 		521145921448DB8B005548B7 /* ViewTheme.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521145901448DB8B005548B7 /* ViewTheme.xib */; };
+		5228CFF01465AA7B00E58093 /* ViewSelectColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5228CFEE1465AA7B00E58093 /* ViewSelectColor.m */; };
+		5228CFF11465AA7B00E58093 /* ViewSelectColor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5228CFEF1465AA7B00E58093 /* ViewSelectColor.xib */; };
 		523AF7CB1449F5F500C8F76C /* ViewSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 523AF7C91449F5F400C8F76C /* ViewSetting.m */; };
 		523AF7CC1449F5F500C8F76C /* ViewSetting.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523AF7CA1449F5F500C8F76C /* ViewSetting.xib */; };
 		52D0C0C0144A1AF5007967D4 /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D0C0AF144A1AF5007967D4 /* NSObject+JSON.m */; };
@@ -129,6 +131,9 @@
 		5211458E1448DB8B005548B7 /* ViewTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewTheme.h; sourceTree = "<group>"; };
 		5211458F1448DB8B005548B7 /* ViewTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewTheme.m; sourceTree = "<group>"; };
 		521145901448DB8B005548B7 /* ViewTheme.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewTheme.xib; sourceTree = "<group>"; };
+		5228CFED1465AA7B00E58093 /* ViewSelectColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewSelectColor.h; sourceTree = "<group>"; };
+		5228CFEE1465AA7B00E58093 /* ViewSelectColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewSelectColor.m; sourceTree = "<group>"; };
+		5228CFEF1465AA7B00E58093 /* ViewSelectColor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewSelectColor.xib; sourceTree = "<group>"; };
 		523AF7C81449F5F300C8F76C /* ViewSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewSetting.h; sourceTree = "<group>"; };
 		523AF7C91449F5F400C8F76C /* ViewSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewSetting.m; sourceTree = "<group>"; };
 		523AF7CA1449F5F500C8F76C /* ViewSetting.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewSetting.xib; sourceTree = "<group>"; };
@@ -195,6 +200,9 @@
 				43C600D714423ECF001E16D7 /* ViewBeforeAfter.h */,
 				43C600D814423ECF001E16D7 /* ViewBeforeAfter.m */,
 				43C600D914423ECF001E16D7 /* ViewBeforeAfter.xib */,
+				5228CFED1465AA7B00E58093 /* ViewSelectColor.h */,
+				5228CFEE1465AA7B00E58093 /* ViewSelectColor.m */,
+				5228CFEF1465AA7B00E58093 /* ViewSelectColor.xib */,
 				43C600EA144242DE001E16D7 /* ViewSelectTheme.h */,
 				43C600EB144242DE001E16D7 /* ViewSelectTheme.m */,
 				43C600EC144242DE001E16D7 /* ViewSelectTheme.xib */,
@@ -420,6 +428,7 @@
 				43465A0B144E3FA300185EFF /* title.png in Resources */,
 				43465A16144E44A000185EFF /* before_after_text.png in Resources */,
 				43465A94144E596A00185EFF /* icon.png in Resources */,
+				5228CFF11465AA7B00E58093 /* ViewSelectColor.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +466,7 @@
 				52D0C0D7144A1B2F007967D4 /* ImageUtil.m in Sources */,
 				52D0C0D8144A1B2F007967D4 /* NSDictionary+Merge.m in Sources */,
 				52D0C0D9144A1B2F007967D4 /* TimeUtil.m in Sources */,
+				5228CFF01465AA7B00E58093 /* ViewSelectColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

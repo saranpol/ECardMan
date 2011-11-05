@@ -64,7 +64,7 @@
 
 - (IBAction)clickNext:(id)sender {
 	[self.view removeFromSuperview];
-	[[ECardManAppDelegate core]->viewController gotoViewSelectTheme];
+	[[ECardManAppDelegate core]->viewController gotoViewSelectColor];
 }
 
 - (IBAction)clickBack:(id)sender {

@@ -10,6 +10,7 @@
 #import "ViewHowToPlay.h"
 #import "ViewChooseYourself.h"
 #import "ViewBeforeAfter.h"
+#import "ViewSelectColor.h"
 #import "ViewSelectTheme.h"
 #import "ViewPersonalize.h"
 #import "ViewEmailFriend.h"
@@ -22,6 +23,7 @@
 	ViewHowToPlay *mViewHowToPlay;
 	ViewChooseYourself *mViewChooseYourself;
 	ViewBeforeAfter	*mViewBeforeAfter;
+    ViewSelectColor *mViewSelectColor;
 	ViewSelectTheme *mViewSelectTheme;
 	ViewPersonalize *mViewPersonalize;
 	ViewEmailFriend *mViewEmailFriend;
@@ -41,6 +43,7 @@
 -(void)gotoViewChooseYourself;
 -(void)gotoViewCamera;
 -(void)gotoViewBeforeAfter;
+-(void)gotoViewSelectColor;
 -(void)gotoViewSelectTheme;
 -(void)gotoViewPersonalize;
 -(void)gotoViewEmailFriend;

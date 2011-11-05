@@ -213,6 +213,12 @@
 	[self.view addSubview:mViewBeforeAfter.view];
 }
 
+-(void)gotoViewSelectColor {
+	if(!mViewSelectColor)
+		mViewSelectColor = [[ViewSelectColor alloc] initWithNibName:@"ViewSelectColor" bundle:nil];
+	[self.view addSubview:mViewSelectColor.view];
+}	
+
 -(void)gotoViewSelectTheme {
 	if(!mViewSelectTheme)
 		mViewSelectTheme = [[ViewSelectTheme alloc] initWithNibName:@"ViewSelectTheme" bundle:nil];
