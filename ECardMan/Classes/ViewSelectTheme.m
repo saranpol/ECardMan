@@ -41,20 +41,25 @@
     NSLog(@"ssss %d", v.tag);
 }
 
+
+#define THEME_PAGE 1
+//#define THEME_PAGE 3
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     mViewThemeArray = [[NSMutableArray alloc] init];
     
-    for(int i=0; i<3; i++){
+    
+    for(int i=0; i<THEME_PAGE; i++){
         for(int j=0; j<4; j++){
             ViewTheme *v = [[ViewTheme alloc] initWithNibName:@"ViewTheme" bundle:nil];
             [mViewThemeArray addObject:v];
             v.view.tag = i*4+j;
             [(UIControl*)v.view addTarget:self action:@selector(clickTheme:) forControlEvents:UIControlEventTouchDown];
             CGRect frame = v.view.frame;
-            int x = 50;
+            int x = 70;
             if(j==1 || j==3)
-                x = 512+50;
+                x = 512+30;
             frame.origin.x = x+i*1024;
             if(j < 2)
                 frame.origin.y = 0;
@@ -64,9 +69,14 @@
             v.view.frame = frame;
             [mScrollView addSubview:v.view];
             [v.mImage setImage:[ECardManAppDelegate core]->viewController->mViewBeforeAfter.mAfterImage.image];
+            
+            //[ECardManAppDelegate core]->viewController->mCurrentColorIndex
+            // XXX set background image
+            
         }
     }
-    [mScrollView setContentSize:CGSizeMake(1024*3, mScrollView.frame.size.height)];
+    
+    [mScrollView setContentSize:CGSizeMake(1024*THEME_PAGE, mScrollView.frame.size.height)];
     
     ViewTheme *first_theme = [mViewThemeArray objectAtIndex:0];
     [self clickTheme:first_theme.view];

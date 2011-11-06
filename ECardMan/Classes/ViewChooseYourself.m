@@ -103,6 +103,7 @@
 			AsyncImageView* asyncImage = [[[AsyncImageView alloc] initWithFrame:frame] autorelease];
 			UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(frame.origin.x, y+140, 180, 40)] autorelease];
 			[label setText:name];
+            [label setFont:[UIFont fontWithName:@"Optima" size:(18.0)]];
 			[label setBackgroundColor:[UIColor clearColor]];
 			[label setTextColor:[UIColor colorWithRed:237.0/255.0 green:195.0/255.0 blue:119.0/255.0 alpha:1.0]];
 			[label setTextAlignment:UITextAlignmentCenter];

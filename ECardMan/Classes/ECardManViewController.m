@@ -37,7 +37,7 @@
     [mImagePicker setDelegate:self];
     
     // Debug
-    [self gotoViewSelectColor];
+    //[self gotoViewSelectColor];
 
 	
 }

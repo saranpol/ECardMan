@@ -86,15 +86,15 @@
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">button2.png</string>
 						</object>
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="727078863">
-							<string key="name">Helvetica-Bold</string>
-							<string key="family">Helvetica</string>
-							<int key="traits">2</int>
-							<double key="pointSize">15</double>
+						<object class="IBUIFontDescription" key="IBUIFontDescription" id="306829274">
+							<string key="name">Optima-Regular</string>
+							<string key="family">Optima</string>
+							<int key="traits">0</int>
+							<double key="pointSize">20</double>
 						</object>
-						<object class="NSFont" key="IBUIFont" id="857092467">
-							<string key="NSName">Helvetica-Bold</string>
-							<double key="NSSize">15</double>
+						<object class="NSFont" key="IBUIFont" id="684628301">
+							<string key="NSName">Optima-Regular</string>
+							<double key="NSSize">20</double>
 							<int key="NSfFlags">16</int>
 						</object>
 					</object>
@@ -127,8 +127,8 @@
 						<reference key="IBUINormalTitleShadowColor" ref="981493960"/>
 						<reference key="IBUIHighlightedBackgroundImage" ref="709671657"/>
 						<reference key="IBUINormalBackgroundImage" ref="67124373"/>
-						<reference key="IBUIFontDescription" ref="727078863"/>
-						<reference key="IBUIFont" ref="857092467"/>
+						<reference key="IBUIFontDescription" ref="306829274"/>
+						<reference key="IBUIFont" ref="684628301"/>
 					</object>
 					<object class="IBUIImageView" id="327325303">
 						<reference key="NSNextResponder" ref="766721923"/>
