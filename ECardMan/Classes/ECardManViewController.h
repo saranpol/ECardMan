@@ -35,6 +35,7 @@
 	UIPopoverController *mPopoverController;
     
     UIImage *mEcardImage;
+    int mCurrentColorIndex;
 	
 	int mCurrentThemeId;
 

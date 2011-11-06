@@ -10,11 +10,11 @@
 
 @interface ViewSelectColor : UIViewController{
 @public
-	//IBOutlet UIScrollView *mScrollView;
+	IBOutlet UIScrollView *mScrollView;
     //NSMutableArray *mViewThemeArray;
 }
 
-//@property (nonatomic, retain) IBOutlet UIScrollView *mScrollView;
+@property (nonatomic, retain) IBOutlet UIScrollView *mScrollView;
 
 
 - (IBAction)clickNext:(id)sender;

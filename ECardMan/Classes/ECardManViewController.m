@@ -35,6 +35,9 @@
 	mImagePicker = [[UIImagePickerController alloc] init];
 	[mImagePicker setAllowsEditing:NO];
     [mImagePicker setDelegate:self];
+    
+    // Debug
+    [self gotoViewSelectColor];
 
 	
 }
