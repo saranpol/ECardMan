@@ -66,13 +66,52 @@
             else
                 frame.origin.y = 300;
             
+            
+            
             v.view.frame = frame;
             [mScrollView addSubview:v.view];
             [v.mImage setImage:[ECardManAppDelegate core]->viewController->mViewBeforeAfter.mAfterImage.image];
             
-            //[ECardManAppDelegate core]->viewController->mCurrentColorIndex
-            // XXX set background image
+            NSString *s;
+            switch ([ECardManAppDelegate core]->viewController->mCurrentColorIndex) {
+                case 0:
+                    s = @"01";
+                    break;
+                case 1:
+                    s = @"03";
+                    break;
+                case 2:
+                    s = @"05";
+                    break;
+                case 3:
+                    s = @"07";
+                    break;
+                case 4:
+                    s = @"08";
+                    break;
+                case 5:
+                    s = @"09";
+                    break;
+                case 6:
+                    s = @"10";
+                    break;
+                case 7:
+                    s = @"11";
+                    break;
+                case 8:
+                    s = @"13";
+                    break;
+                case 9:
+                    s = @"14";
+                    break;
+                default:
+                    s = @"01";
+                    break;
+            }
             
+            s = [s stringByAppendingFormat:@"-%d.png",j+1];
+            
+            [v.mImageBg setImage:[UIImage imageNamed:s]];
         }
     }
     
@@ -124,7 +163,7 @@
 
 - (IBAction)clickBack:(id)sender {
 	[self.view removeFromSuperview];
-    [[ECardManAppDelegate core]->viewController gotoViewBeforeAfter];
+    [[ECardManAppDelegate core]->viewController gotoViewSelectColor];
 
     [[ECardManAppDelegate core]->viewController->mViewSelectTheme release];
     [ECardManAppDelegate core]->viewController->mViewSelectTheme = nil;

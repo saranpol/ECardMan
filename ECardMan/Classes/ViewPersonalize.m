@@ -14,7 +14,9 @@
 @implementation ViewPersonalize
 
 @synthesize mImage;
+@synthesize mImageBg;
 @synthesize mLabel;
+@synthesize mName;
 @synthesize mNameTextField;
 @synthesize mEmailTextField;	
 @synthesize mTextView;
@@ -53,10 +55,69 @@
 	if([ECardManAppDelegate core]->viewController->mViewChooseYourself->mCurrentItem){
 		[mNameTextField setText:[[ECardManAppDelegate core]->viewController->mViewChooseYourself->mCurrentItem objectForKey:@"name"]];
 		[mEmailTextField setText:[[ECardManAppDelegate core]->viewController->mViewChooseYourself->mCurrentItem objectForKey:@"email"]];
+        [mName setText:[[ECardManAppDelegate core]->viewController->mViewChooseYourself->mCurrentItem objectForKey:@"name"]];
 	}else{
 		[mNameTextField setText:@""];
 		[mEmailTextField setText:@""];
+        [mName setText:@""];
 	}
+    
+    
+    
+    NSString *s;
+    switch ([ECardManAppDelegate core]->viewController->mCurrentColorIndex) {
+        case 0:
+            s = @"01";
+            break;
+        case 1:
+            s = @"03";
+            break;
+        case 2:
+            s = @"05";
+            break;
+        case 3:
+            s = @"07";
+            break;
+        case 4:
+            s = @"08";
+            break;
+        case 5:
+            s = @"09";
+            break;
+        case 6:
+            s = @"10";
+            break;
+        case 7:
+            s = @"11";
+            break;
+        case 8:
+            s = @"13";
+            break;
+        case 9:
+            s = @"14";
+            break;
+        default:
+            s = @"01";
+            break;
+    }
+    
+    s = [s stringByAppendingFormat:@"-%d.png", ([ECardManAppDelegate core]->viewController->mCurrentThemeId + 1)];
+    [mImageBg setImage:[UIImage imageNamed:s]];
+
+    if([ECardManAppDelegate core]->viewController->mCurrentThemeId > 1){
+        CGRect f = mLabel.frame;
+        f.origin.x += 40;
+        f.size.width -= 40;
+        [mLabel setFrame:f];
+        
+        f = mName.frame;
+        f.origin.x = 71;
+        [mName setFrame:f];
+    }
+}
+
+- (void)textFieldDidChange:(id)sender {
+    [mName setText:mNameTextField.text];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -65,6 +126,7 @@
 
     [mImage setImage:[ECardManAppDelegate core]->viewController->mViewBeforeAfter.mAfterImage.image];
     [mTextView setDelegate:self];
+    [mNameTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
 
 	[[NSNotificationCenter defaultCenter] addObserver:self  
 											 selector:@selector(keyboardShowNotification:)  
@@ -102,7 +164,9 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 	
     [mImage release];
+    [mImageBg release];
     [mLabel release];
+    [mName release];
 	[mNameTextField release];
 	[mEmailTextField release];
     [mTextView release];

@@ -12,7 +12,9 @@
 @interface ViewPersonalize : UIViewController <UITextViewDelegate> {
 @public
 	IBOutlet UIImageView *mImage;
+    IBOutlet UIImageView *mImageBg;
     IBOutlet UILabel *mLabel;
+    IBOutlet UILabel *mName;
     IBOutlet UITextView *mTextView;
 	IBOutlet UITextField *mNameTextField;
 	IBOutlet UITextField *mEmailTextField;	
@@ -20,7 +22,9 @@
 }
 
 @property (nonatomic, retain) IBOutlet UIImageView *mImage;
+@property (nonatomic, retain) IBOutlet UIImageView *mImageBg;
 @property (nonatomic, retain) IBOutlet UILabel *mLabel;
+@property (nonatomic, retain) IBOutlet UILabel *mName;
 @property (nonatomic, retain) IBOutlet UITextField *mNameTextField;
 @property (nonatomic, retain) IBOutlet UITextField *mEmailTextField;	
 @property (nonatomic, retain) IBOutlet UITextView *mTextView;
