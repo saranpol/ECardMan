@@ -32,6 +32,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
 	mImagePicker = [[UIImagePickerController alloc] init];
 	[mImagePicker setAllowsEditing:NO];
     [mImagePicker setDelegate:self];
@@ -64,7 +65,8 @@
 
 
 - (void)dealloc {
-	[mImagePicker release];
+	if(mImagePicker)
+        [mImagePicker release];
 	if(mPopoverController)
 		[mPopoverController release];
 
@@ -173,6 +175,9 @@
 	
 	[mViewBeforeAfter effectImage];
 
+    
+    [mImagePicker release];
+    mImagePicker = nil;
 
 }
 
@@ -180,12 +185,17 @@
 
 
 
-
 -(void)gotoViewCamera {
-	if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+    if(mImagePicker)
+        [mImagePicker release];
+    mImagePicker = [[UIImagePickerController alloc] init];
+	[mImagePicker setAllowsEditing:NO];
+    [mImagePicker setDelegate:self];
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
 		[mImagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
-		mImagePicker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
-		[self presentModalViewController:mImagePicker animated:YES];
+		[mImagePicker setCameraDevice:UIImagePickerControllerCameraDeviceFront];
+        [self presentModalViewController:mImagePicker animated:YES];
     }else{
 		[mImagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
 		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
