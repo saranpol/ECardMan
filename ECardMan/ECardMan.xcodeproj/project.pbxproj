@@ -56,6 +56,8 @@
 		5228CFF11465AA7B00E58093 /* ViewSelectColor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5228CFEF1465AA7B00E58093 /* ViewSelectColor.xib */; };
 		523AF7CB1449F5F500C8F76C /* ViewSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 523AF7C91449F5F400C8F76C /* ViewSetting.m */; };
 		523AF7CC1449F5F500C8F76C /* ViewSetting.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523AF7CA1449F5F500C8F76C /* ViewSetting.xib */; };
+		526519B71472898400E9775A /* KYLE-H.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 526519B61472898400E9775A /* KYLE-H.TTF */; };
+		526519B914728F2800E9775A /* how_to_play_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 526519B814728F2800E9775A /* how_to_play_text.png */; };
 		5280DC19147278FD002C5616 /* 01-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5280DBF1147278FD002C5616 /* 01-1.png */; };
 		5280DC1A147278FD002C5616 /* 01-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5280DBF2147278FD002C5616 /* 01-2.png */; };
 		5280DC1B147278FD002C5616 /* 01-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5280DBF3147278FD002C5616 /* 01-3.png */; };
@@ -188,6 +190,8 @@
 		523AF7C81449F5F300C8F76C /* ViewSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewSetting.h; sourceTree = "<group>"; };
 		523AF7C91449F5F400C8F76C /* ViewSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewSetting.m; sourceTree = "<group>"; };
 		523AF7CA1449F5F500C8F76C /* ViewSetting.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewSetting.xib; sourceTree = "<group>"; };
+		526519B61472898400E9775A /* KYLE-H.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KYLE-H.TTF"; sourceTree = "<group>"; };
+		526519B814728F2800E9775A /* how_to_play_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = how_to_play_text.png; sourceTree = "<group>"; };
 		5280DBF1147278FD002C5616 /* 01-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01-1.png"; sourceTree = "<group>"; };
 		5280DBF2147278FD002C5616 /* 01-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01-2.png"; sourceTree = "<group>"; };
 		5280DBF3147278FD002C5616 /* 01-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01-3.png"; sourceTree = "<group>"; };
@@ -366,6 +370,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				526519B61472898400E9775A /* KYLE-H.TTF */,
 				2899E5210DE3E06400AC0155 /* ECardManViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* ECardMan-Info.plist */,
@@ -390,6 +395,7 @@
 				5280DBF0147278FD002C5616 /* theme */,
 				52FB5DFC14663CA500E6C572 /* lip */,
 				43465A93144E596A00185EFF /* icon.png */,
+				526519B814728F2800E9775A /* how_to_play_text.png */,
 				43BC6719144E09C6000FEC6E /* choose_yourself_default.png */,
 				434659EE144E3FA300185EFF /* bg.png */,
 				434659EF144E3FA300185EFF /* button2_press.png */,
@@ -650,6 +656,8 @@
 				5280DC3E147278FD002C5616 /* 14-2.png in Resources */,
 				5280DC3F147278FD002C5616 /* 14-3.png in Resources */,
 				5280DC40147278FD002C5616 /* 14-4.png in Resources */,
+				526519B71472898400E9775A /* KYLE-H.TTF in Resources */,
+				526519B914728F2800E9775A /* how_to_play_text.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

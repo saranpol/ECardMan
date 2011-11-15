@@ -114,6 +114,9 @@
         f.origin.x = 71;
         [mName setFrame:f];
     }
+    
+
+    
 }
 
 - (void)textFieldDidChange:(id)sender {
@@ -136,6 +139,8 @@
 											 selector:@selector(keyboardHideNotification:)  
 												 name:UIKeyboardWillHideNotification  
 											   object:nil];
+    
+    [mName setFont:[UIFont fontWithName:@"KylesHand" size:30]];
 }
 
 
