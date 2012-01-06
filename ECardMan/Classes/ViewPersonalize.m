@@ -193,6 +193,13 @@
         
     [[ECardManAppDelegate core]->viewController->mViewPersonalize release];
     [ECardManAppDelegate core]->viewController->mViewPersonalize = nil;
+    
+    if([ECardManAppDelegate core]->viewController->mCurrentName)
+        [[ECardManAppDelegate core]->viewController->mCurrentName release];
+    if([ECardManAppDelegate core]->viewController->mCurrentEmail)
+        [[ECardManAppDelegate core]->viewController->mCurrentEmail release];
+    [ECardManAppDelegate core]->viewController->mCurrentName = [mNameTextField.text copy];
+    [ECardManAppDelegate core]->viewController->mCurrentEmail = [mEmailTextField.text copy];
 }
 
 - (IBAction)clickBack:(id)sender {

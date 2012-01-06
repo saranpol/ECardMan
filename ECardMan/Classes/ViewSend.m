@@ -217,6 +217,12 @@
     }
     [post_data_arr setObject:s forKey:@"AfterForm[lip_no]"];
     
+    [post_data_arr setObject:[ECardManAppDelegate core]->viewController->mCurrentEmail forKey:@"AfterForm[email]"];
+    [post_data_arr setObject:[ECardManAppDelegate core]->viewController->mCurrentName forKey:@"AfterForm[name]"];
+    
+    
+    //[post_data_arr setObject:s forKey:@"AfterForm[phone]"];
+    
     
     
     

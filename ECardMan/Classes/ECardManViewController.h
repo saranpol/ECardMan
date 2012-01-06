@@ -38,6 +38,10 @@
     int mCurrentColorIndex;
 	
 	int mCurrentThemeId;
+    
+    
+    NSString *mCurrentName;
+    NSString *mCurrentEmail;
 
 }
 -(void)gotoViewHowToPlay;
